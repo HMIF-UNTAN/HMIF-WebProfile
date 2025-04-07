@@ -47,9 +47,9 @@
         <h3>Dapur HMIF</h3>
         <a href="{{ route('viewdapur') }}">Dashboard</a>
         <a href="{{ route('dapurartikel') }}">Artikel</a>
-        <a href="{{ route('tentang.index') }}">Data Tentang Kami</a>
-        <a href="{{ route('galeri.index') }}">Kelola Galeri</a>
-        <a href="{{ route('kepengurusan.index') }}">Kelola Kepengurusan</a>
+        <a href="{{ route('dapurtentangkami') }}">Data Tentang Kami</a>
+        <a href="{{ route('galeri.index') }}">Galeri</a>
+        <a href="{{ route('kepengurusan.index') }}">Kepengurusan</a>
     </div>
     <div class="content">
         @yield('content')

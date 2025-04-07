@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artikel;
-use Carbon\Carbon;
+use Illuminate\Container\Attributes\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ArtikelController extends Controller
 {
@@ -38,7 +40,7 @@ class ArtikelController extends Controller
             $query->orderBy('tanggal_kegiatan', 'asc');
         }
 
-        $artikels = $query->paginate(10);
+        $artikels = $query->paginate(8);
         return view('dapur.artikel.index', compact('artikels'));
     }
 
@@ -72,13 +74,14 @@ class ArtikelController extends Controller
     }
 
 
-    Artikel::create([
+    $artikel = Artikel::create([
         'judul' => $request->judul,
         'konten' => $request->konten,
         'thumbnail' => $gambarPath,
         'tanggal_kegiatan' => $request->tanggal_kegiatan ?? now()->toDateString(),
     ]);
 
+    Artikel::updateArtikelSeeder();
     return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil diunggah.');
 }
 
@@ -109,7 +112,7 @@ class ArtikelController extends Controller
             'judul' => 'required|string|max:255',
             'konten' => 'required|string',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'tanggal_kegiatan' => 'nullable|date'
+            'tanggal_kegiatan' => 'required|date'
         ]);
 
         $artikel = Artikel::findOrFail($id);
@@ -129,6 +132,7 @@ class ArtikelController extends Controller
             $artikel->thumbnail = $path;
         }
 
+        Artikel::updateArtikelSeeder();
         $artikel->save();
 
         return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil diperbarui.');
@@ -146,7 +150,7 @@ class ArtikelController extends Controller
     }
 
     $artikel->delete();
-
+    Artikel::updateArtikelSeeder();
     return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil dihapus.');
     }
 }
