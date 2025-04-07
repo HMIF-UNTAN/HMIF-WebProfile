@@ -29,4 +29,15 @@ class Artikel extends Model
         'tanggal_kegiatan' => 'date',
     ];
 
+    public static function updateArtikelSeeder()
+    {
+        $data = self::all()->map(function ($artikel) {
+            // Pastikan 'thumbnail' tetap string, bukan path resource
+            $artikel->thumbnail = $artikel->thumbnail ?? null;
+            return $artikel;
+        })->toArray();
+
+        file_put_contents(database_path('seeders/data/artikel.json'), json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    }
+
 }

@@ -18,6 +18,11 @@
         </div>
 
         <div class="mb-3">
+            <label for="tanggal_kegiatan" class="form-label">Tanggal Kegiatan</label>
+            <input type="date" name="tanggal_kegiatan" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
             <label for="thumbnail" class="form-label">Thumbnail</label><br>
             @if ($artikel->thumbnail)
                 <img src="{{ asset('storage/' . $artikel->thumbnail) }}" width="150" class="mb-2"><br>
