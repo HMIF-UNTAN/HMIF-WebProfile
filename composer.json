@@ -10,6 +10,7 @@
         "php": "^8.2",
         "google/apiclient": "2.13",
         "laravel/framework": "^11.31",
+        "laravel/socialite": "^5.19",
         "laravel/tinker": "^2.9",
         "spatie/laravel-permission": "^6.16"
     },

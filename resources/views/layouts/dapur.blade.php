@@ -40,6 +40,23 @@
             border-color: #0F4696;
             color: white;
         }
+        .embed-responsive-custom {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 ratio, bisa ganti jadi 56.25% untuk 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .embed-responsive-custom iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +65,7 @@
         <a href="{{ route('viewdapur') }}">Dashboard</a>
         <a href="{{ route('dapurartikel') }}">Artikel</a>
         <a href="{{ route('dapurtentangkami') }}">Data Tentang Kami</a>
-        <a href="{{ route('galeri.index') }}">Galeri</a>
+        <a href="{{ route('dapurgaleri') }}">Galeri</a>
         <a href="{{ route('kepengurusan.index') }}">Kepengurusan</a>
     </div>
     <div class="content">

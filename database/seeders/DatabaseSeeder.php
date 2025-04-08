@@ -33,5 +33,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(ArtikelSeeder::class);
+
+        $this->call([
+            GaleriSeeder::class,
+        ]);
     }
+    
 }

@@ -38,7 +38,9 @@ return [
     'google' => [
     'client_id' => env('GOOGLE_DRIVE_CLIENT_ID'),
     'client_secret' => env('GOOGLE_DRIVE_CLIENT_SECRET'),
-    'redirect_uri' => env('GOOGLE_DRIVE_REDIRECT_URI'),
+    'redirect' => env('GOOGLE_DRIVE_REDIRECT_URI'),
+    'drive_credentials_path' => env('GOOGLE_DRIVE_CREDENTIALS_PATH'),
+    'service_account_json' => env('GOOGLE_SERVICE_ACCOUNT_JSON'),
     ],
 
 ];
