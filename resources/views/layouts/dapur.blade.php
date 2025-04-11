@@ -66,7 +66,7 @@
         <a href="{{ route('dapurartikel') }}">Artikel</a>
         <a href="{{ route('dapurtentangkami') }}">Data Tentang Kami</a>
         <a href="{{ route('dapurgaleri') }}">Galeri</a>
-        <a href="{{ route('kepengurusan.index') }}">Kepengurusan</a>
+        <a href="{{ route('dapurpengurus') }}">Kepengurusan</a>
     </div>
     <div class="content">
         @yield('content')

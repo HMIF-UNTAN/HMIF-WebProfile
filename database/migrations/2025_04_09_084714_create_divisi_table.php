@@ -9,10 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('galeri_albums', function (Blueprint $table) {
+        Schema::create('divisi', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galeri_albums');
+        Schema::dropIfExists('divisi');
     }
 };

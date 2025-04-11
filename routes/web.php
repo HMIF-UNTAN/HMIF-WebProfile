@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DapurController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\KepengurusanController;
 use App\Http\Controllers\TentangKamiController;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('dapur')->group(function () {
     Route::get('/artikel', [ArtikelController::class, 'indexDapur'])->name('dapurartikel');
     Route::get('/tentang-kami', [TentangKamiController::class, 'indexDapur'])->name('dapurtentangkami');
     Route::get('/galeri', [GaleriController::class, 'indexDapur'])->name('dapurgaleri');
-    Route::get('/kepengurusan', [KepengurusanController::class, 'index'])->name('kepengurusan.index');
+    Route::get('/kepengurusan', [KepengurusanController::class, 'indexDapur'])->name('dapurpengurus');
 });
 
 Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin'])->group(Function(){
@@ -35,7 +36,7 @@ Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth'
 
 Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/tambah', 'tambahtentangkami')->name('tambahtentangkami');
-    Route::post('/', 'store')->name('tentangkami.store'); 
+    Route::post('/tambah', 'store')->name('tentangkami.store'); 
     Route::get('/edit/{id}', 'edit')->name('tentangkami.edit');
     Route::put('/update/{id}', 'update')->name('tentangkami.update');
     Route::delete('/{id}', 'destroy')->name('tentangkami.destroy');
@@ -43,13 +44,21 @@ Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->m
 
 Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/tambah', 'tambahalbum')->name('tambahalbum');
-    Route::post('/', 'store')->name('galeri.store'); 
+    Route::post('/tambah', 'store')->name('galeri.store'); 
     Route::get('/edit/{id}', 'edit')->name('galeri.edit');
     Route::post('/edit/{id}', 'uploadFoto')->name('galeri.upload');
     Route::delete('/edit/{id}/foto/{fileId}', 'hapusFoto')->name('galeri.hapus');
     Route::put('/update/{id}', 'update')->name('tentangkami.update');
     Route::delete('/{id}', 'destroy')->name('galeri.destroy');
     Route::get('/galeri/download-seeder', 'downloadSeederFromDrive')->name('galeri.downloadSeeder');
+});
+
+Route::controller(KepengurusanController::class)->prefix('dapur/pengurus')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/tambah', 'tambahpengurus')->name('tambahpengurus');
+    Route::post('/tambah', 'store')->name('pengurus.store');
+    Route::get('/edit/{id}', 'edit')->name('pengurus.edit');
+    Route::put('/{id}', 'update')->name('pengurus.update');
+    Route::delete('/{id}', 'destroy')->name('pengurus.destroy');
 });
 
 Route::get('/oauth/google', function () {

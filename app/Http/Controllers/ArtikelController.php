@@ -74,7 +74,7 @@ class ArtikelController extends Controller
     }
 
 
-    $artikel = Artikel::create([
+    Artikel::create([
         'judul' => $request->judul,
         'konten' => $request->konten,
         'thumbnail' => $gambarPath,
@@ -143,14 +143,14 @@ class ArtikelController extends Controller
      */
     public function destroy(string $id)
     {
-    $artikel = Artikel::findOrFail($id);
+        $artikel = Artikel::findOrFail($id);
 
-    if ($artikel->thumbnail) {
-        \Storage::delete('public/' . $artikel->thumbnail);
-    }
+        if ($artikel->thumbnail) {
+            \Storage::delete('public/' . $artikel->thumbnail);
+        }
 
-    $artikel->delete();
-    Artikel::updateArtikelSeeder();
-    return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil dihapus.');
+        $artikel->delete();
+        Artikel::updateArtikelSeeder();
+        return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil dihapus.');
     }
 }
