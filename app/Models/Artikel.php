@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class Artikel extends Model
 {
@@ -22,6 +23,12 @@ class Artikel extends Model
 
         static::updating(function ($artikel) {
             $artikel->slug = Str::slug($artikel->judul);
+        });
+
+        static::deleting(function ($artikel) {
+            if ($atikel->foto && Storage::disk('public')->exists($artikel->foto)) {
+                Storage::disk('public')->delete($artikel->foto);
+            }
         });
     }
 

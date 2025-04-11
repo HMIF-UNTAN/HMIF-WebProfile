@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class Pengurus extends Model
 {
@@ -20,6 +21,15 @@ class Pengurus extends Model
         'jenis_jabatan',
         'foto',
     ];
+
+    protected static function booted()
+    {
+        static::deleting(function ($pengurus) {
+            if ($pengurus->foto && Storage::disk('public')->exists($pengurus->foto)) {
+                Storage::disk('public')->delete($pengurus->foto);
+            }
+        });
+    }
 
     public function kepengurusan()
     {
