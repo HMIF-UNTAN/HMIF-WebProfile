@@ -87,6 +87,10 @@ class KepengurusanController extends Controller
         $pengurus = Pengurus::findOrFail($id);
 
         if ($request->hasFile('foto')) {
+            if ($pengurus->foto && Storage::disk('public')->exists($pengurus->foto)) {
+                Storage::disk('public')->delete($pengurus->foto);
+            }
+
             $foto = $request->file('foto');
             $fotoPath = $foto->store('foto_pengurus', 'public');
             $pengurus->foto = $fotoPath;
