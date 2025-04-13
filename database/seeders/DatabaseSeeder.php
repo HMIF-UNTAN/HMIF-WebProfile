@@ -2,41 +2,66 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role as ModelsRole;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // 1. Reset cache permissions
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-        
-        DB::table('users')->insert([
+        // 2. Create permissions
+        $permissions = [
+            'manage_users',
+            'manage_articles',
+            'manage_galleries',
+            'manage_settings'
+        ];
+
+        foreach ($permissions as $permission) {
+            Permission::firstOrCreate(['name' => $permission]);
+        }
+
+        $adminRole = Role::findByName('admin');
+        $superAdminRole = Role::findByName('superadmin');
+
+        // 4. Assign permissions
+        $superAdminRole->givePermissionTo(Permission::all());
+        $adminRole->givePermissionTo(['manage_articles', 'manage_galleries']);
+
+        // 5. Pertahankan akun HMIF yang sudah ada (update jika perlu)
+        $hmifUser = User::updateOrCreate(
+            ['email' => 'hmif@contoh.com'],
             [
                 'name' => 'Admin HMIF',
-                'email' => 'hmiif@contoh.com',
-                'password' => 'passwordhmif',
-                'uuid' => 'e8af43f2-046d-41e8-b1e5-916c412fbee5',
-                'created_at' => '2025-04-05 10:41:35',
-                'updated_at' => '2025-04-05 10:41:35',
-            ],
+                'password' => Hash::make('passwordhmif'), // Di-hash ulang
+                'uuid' => Str::uuid(),
+                'updated_at' => now()
+            ]
+        );
+        $hmifUser->syncRoles('admin'); // Beri role admin
+
+        // 6. Buat SUPER ADMIN BARU (akun terpisah)
+        $superAdmin = User::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@contoh.com',
+            'password' => Hash::make('superadminhmif'),
+            'uuid' => Str::uuid(),
         ]);
+        $superAdmin->syncRoles('superadmin');
 
-        $this->call(ArtikelSeeder::class);
-
+        // 7. Seed lainnya
         $this->call([
+            ArtikelSeeder::class,
             GaleriSeeder::class,
         ]);
     }
-    
 }

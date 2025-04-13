@@ -17,7 +17,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
 });
 
-Route::middleware(['auth', 'role:admin'])->prefix('dapur')->group(function () {
+Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
     Route::get('/', [DapurController::class, 'index'])->name('viewdapur');
 
     Route::get('/artikel', [ArtikelController::class, 'indexDapur'])->name('dapurartikel');
@@ -26,7 +26,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('dapur')->group(function () {
     Route::get('/kepengurusan', [KepengurusanController::class, 'indexDapur'])->name('dapurpengurus');
 });
 
-Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin'])->group(Function(){
+Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(Function(){
     Route::get('/artikel/tambah', 'tambahArtikel')->name('tambahArtikel');
     Route::post('/artikel', 'store')->name('artikel.store'); 
     Route::get('/artikel/{slug}/edit', 'edit')->name('artikel.edit');
@@ -34,7 +34,7 @@ Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth'
     Route::delete('/artikel/{slug}', 'destroy')->name('artikel.destroy');
 });
 
-Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->middleware(['auth', 'role:admin'])->group(function () {
+Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
     Route::get('/tambah', 'tambahtentangkami')->name('tambahtentangkami');
     Route::post('/tambah', 'store')->name('tentangkami.store'); 
     Route::get('/edit/{id}', 'edit')->name('tentangkami.edit');
@@ -42,7 +42,7 @@ Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->m
     Route::delete('/{id}', 'destroy')->name('tentangkami.destroy');
 });
 
-Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware(['auth', 'role:admin'])->group(function () {
+Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
     Route::get('/tambah', 'tambahalbum')->name('tambahalbum');
     Route::post('/tambah', 'store')->name('galeri.store'); 
     Route::get('/edit/{id}', 'edit')->name('galeri.edit');
@@ -53,7 +53,7 @@ Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware([
     Route::get('/galeri/download-seeder', 'downloadSeederFromDrive')->name('galeri.downloadSeeder');
 });
 
-Route::controller(KepengurusanController::class)->prefix('dapur/pengurus')->middleware(['auth', 'role:admin'])->group(function () {
+Route::controller(KepengurusanController::class)->prefix('dapur/pengurus')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
     Route::get('/tambah', 'tambahpengurus')->name('tambahpengurus');
     Route::post('/tambah', 'store')->name('pengurus.store');
     Route::get('/edit/{id}', 'edit')->name('pengurus.edit');

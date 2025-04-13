@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "id": 4,
+        "judul": "Testing artikel",
+        "konten": "Artikel Feature test",
+        "slug": "testing-artikel",
+        "tanggal_kegiatan": "2025-04-11T00:00:00.000000Z",
+        "thumbnail": "artikel_images\/6XlZgH6J3QWJIx1YC0FEkd0vszOkZDn3JWmjRzgz.png",
+        "created_at": "2025-04-11T10:58:13.000000Z",
+        "updated_at": "2025-04-11T10:58:13.000000Z"
+    }
+]

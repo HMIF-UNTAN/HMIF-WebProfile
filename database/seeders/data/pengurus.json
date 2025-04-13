@@ -1,1 +1,15 @@
-[]
+[
+    {
+        "nama": "Raden Adang Edithya Astama",
+        "nim": "D1041221043",
+        "email": "D1041221043@student.untan.ac.id",
+        "no_hp": "0877889167837",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/Uh1e6l6KirEGiF3pKC4C42Bo6J8uMzc1rzgvG74y.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
+    }
+]

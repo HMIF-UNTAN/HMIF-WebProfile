@@ -19,7 +19,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if (Auth::user()->hasRole('admin')) {
+            if (Auth::user()->hasRole('admin|superadmin')) {
                 return redirect()->intended(route('viewdapur'));
             }
             return redirect()->intended('/');
