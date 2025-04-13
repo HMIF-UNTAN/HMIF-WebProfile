@@ -13,8 +13,21 @@
         </div>
 
         <div class="mb-3">
+            @php
+                $konten = $tentangkami->konten;
+            @endphp
+
             <label for="konten" class="form-label">Konten</label>
-            <textarea name="konten" class="form-control" rows="6" required>{{ old('konten', $tentangkami->konten) }}</textarea>
+            @php
+            $konten = $tentangkami->konten;
+            @endphp
+
+            @if(is_array($konten) && count($konten) > 1)
+                <textarea name="konten" class="form-control" rows="6" required>{{ implode("\n", $konten) }}</textarea>
+            @else
+                <textarea name="konten" class="form-control" rows="6" required>{{ is_array($konten) ? $konten[0] : $konten }}</textarea>
+            @endif
+
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
