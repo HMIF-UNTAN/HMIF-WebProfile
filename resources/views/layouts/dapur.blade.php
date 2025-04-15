@@ -67,9 +67,11 @@
         <a href="{{ route('dapurtentangkami') }}">Data Tentang Kami</a>
         <a href="{{ route('dapurgaleri') }}">Galeri</a>
         <a href="{{ route('dapurpengurus') }}">Kepengurusan</a>
+        <a href="{{ route('dapurkontak') }}">Kontak Kami</a>
     </div>
     <div class="content">
         @yield('content')
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </body>
 </html>
