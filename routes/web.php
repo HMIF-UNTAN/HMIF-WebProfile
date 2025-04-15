@@ -8,6 +8,7 @@ use App\Http\Controllers\DapurController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\KepengurusanController;
+use App\Http\Controllers\KontakController;
 use App\Http\Controllers\TentangKamiController;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
@@ -31,6 +32,7 @@ Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(fun
     Route::get('/tentang-kami', [TentangKamiController::class, 'indexDapur'])->name('dapurtentangkami');
     Route::get('/galeri', [GaleriController::class, 'indexDapur'])->name('dapurgaleri');
     Route::get('/kepengurusan', [KepengurusanController::class, 'indexDapur'])->name('dapurpengurus');
+    Route::get('/kontak', [KontakController::class, 'indexDapur'])->name('dapurkontak');
 });
 
 Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(Function(){
@@ -66,6 +68,10 @@ Route::controller(KepengurusanController::class)->prefix('dapur/pengurus')->midd
     Route::get('/edit/{id}', 'edit')->name('pengurus.edit');
     Route::put('/{id}', 'update')->name('pengurus.update');
     Route::delete('/{id}', 'destroy')->name('pengurus.destroy');
+});
+
+Route::controller(KontakController::class)->prefix('dapur/kontak')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
+    Route::put('/{id}', 'update')->name('kontak.update');
 });
 
 Route::get('/oauth/google', function () {
