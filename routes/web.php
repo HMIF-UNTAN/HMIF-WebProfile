@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminManagementController;
 use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -17,9 +18,15 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
 });
 
+Route::middleware(['auth', 'role:superadmin'])->prefix('superadmin')->group(function () {
+    Route::get('/', [AdminManagementController::class, 'index'])->name('dapurSuperadmin');
+    Route::get('/edit/{id}',[AdminManagementController::class, 'edit'])->name('editAdmin');
+    Route::put('/edit/{id}', [AdminManagementController::class, 'update'])->name('updateAdmin');
+    Route::delete('/hapus/{user}', [AdminManagementController::class, 'destroy'])->name('hapusAdmin');
+});
+
 Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
     Route::get('/', [DapurController::class, 'index'])->name('viewdapur');
-
     Route::get('/artikel', [ArtikelController::class, 'indexDapur'])->name('dapurartikel');
     Route::get('/tentang-kami', [TentangKamiController::class, 'indexDapur'])->name('dapurtentangkami');
     Route::get('/galeri', [GaleriController::class, 'indexDapur'])->name('dapurgaleri');
