@@ -17,7 +17,7 @@
     </div>
 
     <div id="navbarNav" class="hidden lg:flex space-x-6 font-medium">
-      <a href="#home" class="text-white scroll-text hover:text-blue-300 transition">Home</a>
+      <a href="{{ route('home') }}" class="text-white scroll-text hover:text-blue-300 transition">Home</a>
       <a href="#tentang" class="text-white scroll-text hover:text-blue-300 transition">Tentang Kami</a>
       <a href="#galeri" class="text-white scroll-text hover:text-blue-300 transition">Galeri</a>
       <a href="#artikel" class="text-white scroll-text hover:text-blue-300 transition">Artikel</a>

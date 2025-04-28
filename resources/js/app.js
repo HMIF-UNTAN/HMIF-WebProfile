@@ -27,7 +27,6 @@ window.addEventListener('scroll', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("JavaScript Loaded");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -89,49 +88,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const swiperGaleri = new Swiper('.swiper-galeri', {
       loop: true,
-      spaceBetween: -50,
       centeredSlides: true,
+      slidesPerView: 2.5, // 2.5 card kelihatan
+      spaceBetween: -100,
       grabCursor: true,
       effect: 'coverflow',
-      slidesPerView: 1.2,
       coverflowEffect: {
         rotate: 0,
         stretch: 0,
-        depth: 100,
+        depth: 200,
         modifier: 2,
-        slideShadows: false,
+        slideShadows: true,
       },
       pagination: {
         el: '.swiper-galeri .swiper-pagination',
         clickable: true,
       },
+      watchSlidesProgress: true,
       breakpoints: {
         640: {
-          slidesPerView: 2.2,
+          slidesPerView: 1, // untuk hp
+          spaceBetween: -150,
         },
         1024: {
-          slidesPerView: 3.2,
-        }
-      },
-      on: {
-        init: function () {
-          syncSlideHeight();
-        },
-        resize: function () {
-          syncSlideHeight();
+          slidesPerView: 2.5,
+          spaceBetween: -100,
         }
       }
-    });
-    
-    function syncSlideHeight() {
-      const ref = document.querySelector('.youtube-frame') || document.querySelector('iframe');
-      const height = ref?.offsetHeight || 400;
-    
-      document.querySelectorAll('.swiper-galeri .swiper-slide').forEach(slide => {
-        slide.style.height = height + 'px';
-      });
-    }
-     
+    });       
 
     document.querySelectorAll('.swiper-tentangkami .swiper-slide').forEach((slide) => {
         slide.addEventListener('click', () => {

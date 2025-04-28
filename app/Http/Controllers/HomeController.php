@@ -16,23 +16,7 @@ class HomeController extends Controller
         $himpunanInfo = TentangKami::find(2);
         $dataTentangKami = TentangKami::all();
         $newestArticles = Artikel::latest()->take(2)->get();
-        $albums = Galeri::all();
-        $tempThumbnails = [];
-
-        foreach ($albums as $album) {
-            $fileId = $album->google_drive_thumbnail_id;
-            $filename = $fileId . '.jpg';
-            $path = storage_path('framework/cache/' . $filename);
-
-            if (!file_exists($path)) {
-                $driveService->downloadFile($fileId, $path);
-            }
-
-            $album->localThumbnail = url('temp-thumb/' . $filename);
-            $tempThumbnails[] = $filename;
-        }
-
-        session(['temp_thumbnails' => $tempThumbnails]);
+        $albums = Galeri::inRandomOrder()->get();
 
         // Fallback
         $defaultData = [

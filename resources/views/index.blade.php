@@ -113,22 +113,24 @@
         <p>&nbsp;</p>
     </div>
 </section>
-<div class="swiper swiper-galeri w-full py-8">
-  <div class="swiper-wrapper">
+<div class="swiper swiper-galeri w-full max-w-full overflow-visible my-10">
+  <div class="swiper-wrapper my-10 mx-0">
     @foreach ($albums as $album)
-      <div class="swiper-slide flex items-center justify-center h-full">
-        <div class="w-[90%] max-w-3xl mx-auto bg-white shadow rounded-lg overflow-hidden flex flex-col h-[450px]">
-          <img src="{{ $album->thumbnail }}" alt="{{ $album->nama_album }}" class="w-full h-2/3 object-cover">
-          <div class="p-3 text-center bg-white">
-            <h4 class="text-base font-semibold text-[#0F4696] leading-snug">
-              {{ $album->nama_album }}
-            </h4>
+      <div class="swiper-slide w-[500px] flex items-center justify-center">
+        <div class="relative w-full h-[450px] bg-white shadow-lg rounded-2xl overflow-hidden">
+          <div class="absolute inset-0">
+            <img src="{{ Storage::url($album->thumbnail) }}" alt="{{ $album->nama_album }}" class="w-full h-full object-cover" />
           </div>
+          <div class="absolute bottom-0 left-0 right-0 w-full h-1/2 flex items-end">
+            <div class="w-full p-10 bg-gradient-to-t from-[#0F4696] to-transparent">
+              <h4 class="text-lg font-bold text-white text-start w-[50%]">
+                {{ $album->nama_album }}
+              </h4>
+            </div>
+          </div>          
         </div>
-      </div>    
+      </div>
     @endforeach
   </div>
-
-  <div class="swiper-pagination mt-4"></div>
 </div>
 @endsection
