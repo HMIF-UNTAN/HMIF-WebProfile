@@ -14,14 +14,14 @@ class DivisiSeeder extends Seeder
     public function run(): void
     {
         DB::table('divisi')->insert([
-            ['nama' => 'Ketua Himpunan'],
-            ['nama' => 'Bendahara'],
-            ['nama' => 'Sekretaris'],
-            ['nama' => 'Sumber Daya Mahasiswa'],
-            ['nama' => 'Usaha Dana, Profesi dan Jasa'],
-            ['nama' => 'Komunikasi dan Informasi'],
-            ['nama' => 'Kesejahteraan Rumah Tangga'],
-            ['nama' => 'Pendidikan dan Riset Teknologi'],
+            ['id' => 1, 'nama' => 'Ketua Himpunan'],
+            ['id' => 2, 'nama' => 'Bendahara'],
+            ['id' => 3, 'nama' => 'Sekretaris'],
+            ['id' => 4, 'nama' => 'Sumber Daya Mahasiswa'],
+            ['id' => 5, 'nama' => 'Usaha Dana, Profesi dan Jasa'],
+            ['id' => 6, 'nama' => 'Komunikasi dan Informasi'],
+            ['id' => 7, 'nama' => 'Kesejahteraan Rumah Tangga'],
+            ['id' => 8, 'nama' => 'Pendidikan dan Riset Teknologi'],
         ]);
     }
 }

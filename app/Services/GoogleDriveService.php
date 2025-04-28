@@ -155,4 +155,22 @@ class GoogleDriveService
             return false;
         }
     }
+
+    public function getThumbnailFromDriveFolder($folderId)
+    {
+        $params = [
+            'q' => "'$folderId' in parents and name contains 'Thumbnail' and mimeType contains 'image/' and trashed = false",
+            'pageSize' => 1,
+            'fields' => 'files(id, name)',
+        ];
+    
+        $results = $this->service->files->listFiles($params);
+    
+        if (count($results->getFiles()) > 0) {
+            $file = $results->getFiles()[0];
+            return "https://drive.google.com/uc?export=view&id={$file->id}";
+        }
+    
+        return null;
+    }    
 }
