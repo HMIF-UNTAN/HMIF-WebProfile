@@ -27,6 +27,7 @@ window.addEventListener('scroll', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("JavaScript Loaded");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {

@@ -34,17 +34,20 @@ class GaleriController extends Controller
     {
         $request->validate([
             'nama_album' => 'required|string|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:35840', // Tambah validasi thumbnail
         ]);
 
+        $thumbnailPath = null;
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+        }
 
-    
-        // Buat folder di Google Drive
         $folderId = $drive->createFolder($request->nama_album);
 
-        // Simpan ke database
         Galeri::create([
             'nama_album' => $request->nama_album,
             'google_drive_folder_id' => $folderId,
+            'thumbnail' => $thumbnailPath,
         ]);
 
         return redirect()->route('dapurgaleri')->with('success', 'Album berhasil ditambahkan!');
@@ -134,5 +137,32 @@ class GaleriController extends Controller
             'Content-Type' => 'application/json',
             'Content-Disposition' => "attachment; filename={$filename}",
         ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama_album' => 'required|string|max:255',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:35840',
+        ]);
+
+        $galeri = Galeri::findOrFail($id);
+        $data = [
+            'nama_album' => $request->nama_album,
+        ];
+        if ($request->hasFile('thumbnail')) {
+            // Hapus thumbnail lama jika ada
+            if ($galeri->thumbnail && Storage::disk('public')->exists($galeri->thumbnail)) {
+                Storage::disk('public')->delete($galeri->thumbnail);
+            }
+        
+            // Upload thumbnail baru
+            $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+            $data['thumbnail'] = $thumbnailPath;
+        }
+
+        $galeri->update($data);
+
+        return redirect()->route('dapurgaleri')->with('success', 'Album berhasil diperbarui!');
     }
 }

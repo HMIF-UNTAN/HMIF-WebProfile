@@ -35,7 +35,7 @@ class KepengurusanController extends Controller
             'divisi_id' => 'required|exists:divisi,id',
             'jenis_jabatan' => 'required|in:Inti,Anggota',
             'periode' => 'required|string|max:225',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:35840',
         ]);
         $fotoPath = null;
         if ($request->hasFile('foto')) {
@@ -81,7 +81,7 @@ class KepengurusanController extends Controller
             'jenis_jabatan' => 'required|in:Inti,Anggota',
             'divisi_id' => 'required|exists:divisi,id',
             'periode' => 'required|string|max:255',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:35840',
         ]);
 
         $pengurus = Pengurus::findOrFail($id);

@@ -64,7 +64,7 @@ class ArtikelController extends Controller
     $request->validate([
         'judul' => 'required|string|max:255',
         'konten' => 'required',
-        'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:35840',
         'tanggal_kegiatan' => 'required|date'
     ]);
 

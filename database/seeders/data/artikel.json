@@ -1,6 +1,6 @@
 [
     {
-        "id": 4,
+        "id": 1,
         "judul": "Testing artikel",
         "konten": "Artikel Feature test",
         "slug": "testing-artikel",
@@ -8,5 +8,15 @@
         "thumbnail": "artikel_images\/6XlZgH6J3QWJIx1YC0FEkd0vszOkZDn3JWmjRzgz.png",
         "created_at": "2025-04-11T10:58:13.000000Z",
         "updated_at": "2025-04-11T10:58:13.000000Z"
+    },
+    {
+        "id": 2,
+        "judul": "Testing artikel after tailwind",
+        "konten": "testing tailwind migration",
+        "slug": "testing-artikel-after-tailwind",
+        "tanggal_kegiatan": "2025-04-29T00:00:00.000000Z",
+        "thumbnail": "artikel_images\/oiI8JWUeDJdRmIQyYk1lIPRk1mv0ah20GQAhMmmu.png",
+        "created_at": "2025-04-28T06:35:30.000000Z",
+        "updated_at": "2025-04-28T06:35:30.000000Z"
     }
 ]

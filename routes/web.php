@@ -57,7 +57,7 @@ Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware([
     Route::get('/edit/{id}', 'edit')->name('galeri.edit');
     Route::post('/edit/{id}', 'uploadFoto')->name('galeri.upload');
     Route::delete('/edit/{id}/foto/{fileId}', 'hapusFoto')->name('galeri.hapus');
-    Route::put('/update/{id}', 'update')->name('tentangkami.update');
+    Route::put('/update/{id}', 'update')->name('galeri.update');
     Route::delete('/{id}', 'destroy')->name('galeri.destroy');
     Route::get('/galeri/download-seeder', 'downloadSeederFromDrive')->name('galeri.downloadSeeder');
 });
