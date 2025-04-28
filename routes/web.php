@@ -94,3 +94,11 @@ Route::get('/oauth/google/callback', function () {
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/temp-thumb/{filename}', function ($filename) {
+    $path = storage_path('framework/cache/' . $filename);
+    if (!file_exists($path)) {
+        abort(404);
+    }
+
+    return response()->file($path);
+});

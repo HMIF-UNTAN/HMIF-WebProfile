@@ -56,50 +56,5 @@
         ],
         "created_at": "2025-04-05T11:04:00.000000Z",
         "updated_at": "2025-04-05T11:04:00.000000Z"
-    },
-    {
-        "id": 8,
-        "judul": "Usaha Dana, Profesi dan Jasa",
-        "konten": [
-            "Divisi UDPJ bertujuan untuk Menjalin hubungan baik dengan mitra kerja dan mengusahakan pendanaan organisasi dengan jalan yang halal serta Mengembangkan potensi keahlian keprofesian anggota HMIF FT UNTAN dan menyediakan sumber daya yang berkompeten di bidang Informatika."
-        ],
-        "created_at": "2025-04-05T11:04:38.000000Z",
-        "updated_at": "2025-04-05T11:04:38.000000Z"
-    },
-    {
-        "id": 9,
-        "judul": "Sumber Daya Mahasiswa",
-        "konten": [
-            "Divisi SDM bertujuan untuk Membina dan meningkatkan kemampuan anggota dalam memiliki kerangka berpikir dengan tujuan pengembangan dan kesinambungan organisasi untuk mempersiapkan lulusan yang berkompeten."
-        ],
-        "created_at": "2025-04-05T11:04:57.000000Z",
-        "updated_at": "2025-04-05T11:04:57.000000Z"
-    },
-    {
-        "id": 10,
-        "judul": "Kesejahteraan Rumah Tangga",
-        "konten": [
-            "Divisi KESRUT bertujuan untuk Melakukan pembenahan, pengembangan dan pemeliharaan sarana dan prasarana yang ada di lingkungan sekretariat HMIF FT UNTAN dan Menjadikan HMIF FT UNTAN sebagai pusat aktivitas Studi mahasiswa Jurusan Informatika Fakultas Teknik Universitas Tanjungpura yang ideal."
-        ],
-        "created_at": "2025-04-05T11:05:14.000000Z",
-        "updated_at": "2025-04-05T11:05:14.000000Z"
-    },
-    {
-        "id": 11,
-        "judul": "Pendidikan dan Riset Teknologi",
-        "konten": [
-            "Divisi PENRISTEK bertujuan untuk Membentuk kader yang memiliki hard skill dan soft skill serta Menjadi wadah pusat studi ilmiah di bidang IT."
-        ],
-        "created_at": "2025-04-05T11:05:46.000000Z",
-        "updated_at": "2025-04-05T11:05:46.000000Z"
-    },
-    {
-        "id": 12,
-        "judul": "Komunikasi dan Informasi",
-        "konten": [
-            "Divisi KOMINFO bertujuan untuk Mensosialisasikan dan meningkatkan eksistensi HMIF FT UNTAN."
-        ],
-        "created_at": "2025-04-05T11:06:09.000000Z",
-        "updated_at": "2025-04-05T11:06:09.000000Z"
     }
 ]

@@ -10,6 +10,12 @@ use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Seeder;
+use Database\Seeders\TentangKamiSeeder;
+use Database\Seeders\GaleriSeeder;
+use Database\Seeders\ArtikelSeeder;
+use Database\Seeders\DivisiSeeder;
+use Database\Seeders\PengurusSeeder;
+use Database\Seeders\KontakSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,8 +36,8 @@ class DatabaseSeeder extends Seeder
             Permission::firstOrCreate(['name' => $permission]);
         }
 
-        $adminRole = Role::findByName('admin');
-        $superAdminRole = Role::findByName('superadmin');
+        $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        $superAdminRole = Role::firstOrCreate(['name' => 'superadmin', 'guard_name' => 'web']);
 
         // 4. Assign permissions
         $superAdminRole->givePermissionTo(Permission::all());
@@ -62,6 +68,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ArtikelSeeder::class,
             GaleriSeeder::class,
+            DivisiSeeder::class,
+            TentangKamiSeeder::class,
+            PengurusSeeder::class,
+            KontakSeeder::class,
         ]);
     }
 }
