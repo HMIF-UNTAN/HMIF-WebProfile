@@ -12,5 +12,6 @@ class Galeri extends Model
     protected $fillable = [
         'nama_album',
         'google_drive_folder_id',
+        'thumbnail',
     ];
 }

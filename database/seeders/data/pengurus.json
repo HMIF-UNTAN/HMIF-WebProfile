@@ -11,5 +11,18 @@
             "jabatan": "Inti",
             "periode": "2025"
         }
+    },
+    {
+        "nama": "Fikri Al-Jauzi",
+        "nim": "D1041221075",
+        "email": "D1041221075@student.untan.ac.id",
+        "no_hp": "089521386642",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/QoFrtoa86n1j8qRbCYEISqqs5YxZSx6kXeq8Lwbo.jpg",
+        "kepengurusan": {
+            "divisi_id": 1,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
     }
 ]
