@@ -25,11 +25,6 @@
         </div>
 
         <div class="mb-4">
-            <label for="no_hp" class="block text-sm font-medium text-gray-700">No HP</label>
-            <input type="text" name="no_hp" id="no_hp" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{ $pengurus->no_hp }}">
-        </div>
-
-        <div class="mb-4">
             <label for="divisi_id" class="block text-sm font-medium text-gray-700">Divisi</label>
             <select name="divisi_id" id="divisi_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                 <option value="">-- Pilih Divisi --</option>

@@ -30,7 +30,6 @@ class PengurusSeeder extends Seeder
                 'nama' => $item['nama'],
                 'nim' => $item['nim'],
                 'email' => $item['email'],
-                'no_hp' => $item['no_hp'],
                 'jenis_jabatan' => $item['jenis_jabatan'],
                 'foto' => $item['foto'],
             ]);

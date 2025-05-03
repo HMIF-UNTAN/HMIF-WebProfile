@@ -49,97 +49,142 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
 document.addEventListener('DOMContentLoaded', function () {
-    const swiperTentangKami = new Swiper('.swiper-tentangkami', {
-        direction: 'vertical',
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 2.5,
-        spaceBetween: -70,
-        effect: 'coverflow',
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 20,
-            depth: 200,
-            modifier: 2,
-            slideShadows: true,
-        },
-        grabCursor: true,
-        mousewheel: true,
-        pagination: {
-            el: '.swiper-tentangkami .swiper-pagination',
-            clickable: true,
-        },
-        on: {
-            init() {
-                adjustTextSize(this);
-            },
-            slideChangeTransitionEnd() {
-                adjustTextSize(this);
-            }
-        }
+  const buttons = document.querySelectorAll('.divisi-button');
+  const sections = document.querySelectorAll('.divisi-section');
+  let isTransitioning = false;
+
+  function clearTextWithFade(section, callback) {
+    const elements = section.querySelectorAll('.blur-in-out-text');
+    elements.forEach(el => {
+      el.style.transition = 'opacity 1s ease-out';
+      el.style.opacity = '0';
     });
 
-    const swiperGaleri = new Swiper('.swiper-galeri', {
-      loop: true,
-      centeredSlides: true,
-      slidesPerView: 2.5, // 2.5 card kelihatan
-      spaceBetween: -100,
-      grabCursor: true,
-      effect: 'coverflow',
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 200,
-        modifier: 2,
-        slideShadows: true,
-      },
-      pagination: {
-        el: '.swiper-galeri .swiper-pagination',
-        clickable: true,
-      },
-      watchSlidesProgress: true,
-      breakpoints: {
-        640: {
-          slidesPerView: 1, // untuk hp
-          spaceBetween: -150,
-        },
-        1024: {
-          slidesPerView: 2.5,
-          spaceBetween: -100,
-        }
+    setTimeout(() => {
+      if (callback) callback();
+    }, 300);
+  }
+
+  function showSection(section) {
+    section.classList.remove('hidden');
+    setTimeout(() => {
+      section.classList.remove('opacity-0');
+      const elements = section.querySelectorAll('.blur-in-out-text');
+      elements.forEach(el => {
+        el.style.opacity = '1';
+        el.innerHTML = el.dataset.text;
+      });
+      isTransitioning = false;
+    }, 10);
+  }
+
+  function switchSection(newId) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    const newSection = document.getElementById(newId);
+    const currentSection = Array.from(sections).find(s => !s.classList.contains('hidden'));
+
+    if (currentSection && currentSection !== newSection) {
+      clearTextWithFade(currentSection, () => {
+        currentSection.classList.add('opacity-0');
+        setTimeout(() => {
+          currentSection.classList.add('hidden');
+          currentSection.classList.remove('opacity-0');
+          showSection(newSection);
+        }, 300);
+      });
+    } else if (!currentSection) {
+      showSection(newSection);
+    } else {
+      isTransitioning = false;
+    }
+  }
+
+  function setActiveButton(button) {
+    const targetId = button.getAttribute('data-target');
+  
+    buttons.forEach(btn => {
+      btn.classList.remove(
+        'bg-white', 'text-[#0F4696]', 'shadow-md', '!font-bold', '!font-normal', 'shadow-2xl'
+      );
+      btn.classList.add(
+        'bg-transparent', 'text-gray-500', 'shadow-none', '!font-normal'
+      );
+    });
+  
+    button.classList.add(
+      'bg-white', 'text-[#0F4696]', 'shadow-md', '!font-bold', 'shadow-2xl'
+    );
+    button.classList.remove(
+      'bg-transparent', 'text-gray-500', 'shadow-none', '!font-normal'
+    );
+  
+    switchSection(targetId);
+  }  
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => setActiveButton(button));
+  });
+
+  // Tampilkan pertama
+  if (buttons.length) {
+    setActiveButton(buttons[0]);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const chars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+  const elements = document.querySelectorAll(".typewriter-text");
+  let hasAnimated = false;
+  let isScrambling = false;
+
+  function scrambleEffect(el, text, delay = 60, cycles = 8) {
+    const letters = text.split("");
+    let frame = 0;
+    el.textContent = "";
+
+    const interval = setInterval(() => {
+      const output = letters.map((char, i) => {
+        if (i < frame - cycles) return char;
+        return chars[Math.floor(Math.random() * chars.length)];
+      });
+      el.textContent = output.join("");
+
+      frame++;
+      if (frame - cycles > letters.length) {
+        clearInterval(interval);
+        el.textContent = text;
       }
-    });       
+    }, delay);
+  }
 
-    document.querySelectorAll('.swiper-tentangkami .swiper-slide').forEach((slide) => {
-        slide.addEventListener('click', () => {
-            if (!slide.classList.contains('swiper-slide-active')) {
-                const index = parseInt(slide.getAttribute('data-swiper-slide-index'), 10);
-                swiperTentangKami.slideToLoop(index);
-            }
-        });
-    });
+  function startScrambleIfVisible() {
+    if (hasAnimated || isScrambling) return;
 
-    function adjustTextSize(swiper) {
-        swiper.slides.forEach(slide => {
-            const texts = slide.querySelectorAll('.text-dynamic');
-            if (slide.classList.contains('swiper-slide-active')) {
-                texts.forEach(el => {
-                    el.classList.remove('text-sm');
-                    el.classList.add('text-[15px]', 'md:text-[16px]');
-                });
-            } else {
-                texts.forEach(el => {
-                    el.classList.remove('text-[15px]', 'md:text-[16px]');
-                    el.classList.add('text-sm');
-                });
-            }
-        });
-    }  
+    const triggerAdvance = 200;
+    const container = document.querySelector("#statistik-container");
+    if (!container) return;
+
+    const rect = container.getBoundingClientRect();
+    const triggerPoint = window.innerHeight + triggerAdvance;
+
+    if (rect.top < triggerPoint) {
+      isScrambling = true; // cegah pemicu ulang selama animasi jalan
+      elements.forEach(el => {
+        const text = el.dataset.text || "";
+        if (text) scrambleEffect(el, text);
+      });
+      hasAnimated = true; // setelah yakin semua scramble dimulai
+      window.removeEventListener("scroll", onScroll);
+    }
+  }
+
+  function onScroll() {
+    requestAnimationFrame(startScrambleIfVisible);
+  }
+
+  window.addEventListener("scroll", onScroll);
+  startScrambleIfVisible();
 });

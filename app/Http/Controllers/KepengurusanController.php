@@ -6,6 +6,7 @@ use App\Models\Divisi;
 use App\Models\Pengurus;
 use App\Models\Kepengurusan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KepengurusanController extends Controller
 {
@@ -31,7 +32,6 @@ class KepengurusanController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:20',
-            'no_hp' => 'nullable|string|max:20',
             'divisi_id' => 'required|exists:divisi,id',
             'jenis_jabatan' => 'required|in:Inti,Anggota',
             'periode' => 'required|string|max:225',
@@ -47,7 +47,6 @@ class KepengurusanController extends Controller
             'nama' => $request->nama,
             'nim' => $request->nim,
             'email' => $request->nim.'@student.untan.ac.id',
-            'no_hp' => $request->no_hp,
             'jenis_jabatan' => $request->jenis_jabatan,
             'foto' => $fotoPath,
         ]);
@@ -77,7 +76,6 @@ class KepengurusanController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:20',
-            'no_hp' => 'nullable|string|max:20',
             'jenis_jabatan' => 'required|in:Inti,Anggota',
             'divisi_id' => 'required|exists:divisi,id',
             'periode' => 'required|string|max:255',
@@ -99,7 +97,6 @@ class KepengurusanController extends Controller
         $pengurus->update([
             'nama' => $request->nama,
             'nim' => $request->nim,
-            'no_hp' => $request->no_hp,
             'jenis_jabatan' => $request->jenis_jabatan,
             'email' => $request->nim.'@student.untan.ac.id',
         ]);

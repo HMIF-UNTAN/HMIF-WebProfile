@@ -27,6 +27,14 @@
             @endif
         </div>
 
+        <div>
+            <label for="tipe_informasi" class="block text-sm font-medium text-gray-700">Tipe Informasi</label>
+            <select name="tipe_informasi" id="tipe_informasi" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+                <option value="Umum" {{ old('tipe_informasi', $tentangkami->tipe_informasi) == 'Umum' ? 'selected' : '' }}>Umum</option>
+                <option value="Divisi" {{ old('tipe_informasi', $tentangkami->tipe_informasi) == 'Divisi' ? 'selected' : '' }}>Divisi</option>
+            </select>
+        </div>
+
         <div class="flex gap-4">
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md transition">
                 Update

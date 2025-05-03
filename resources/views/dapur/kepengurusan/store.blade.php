@@ -20,11 +20,6 @@
         </div>
 
         <div class="mb-4">
-            <label for="no_hp" class="block text-sm font-medium text-gray-700">No HP</label>
-            <input type="text" name="no_hp" id="no_hp" class="w-full p-3 border border-gray-300 rounded-md focus:ring-[#0C0221] focus:border-[#0C0221]">
-        </div>
-
-        <div class="mb-4">
             <label for="divisi_id" class="block text-sm font-medium text-gray-700">Divisi</label>
             <select name="divisi_id" id="divisi_id" class="w-full p-3 border border-gray-300 rounded-md focus:ring-[#0C0221] focus:border-[#0C0221]" required>
                 <option value="">-- Pilih Divisi --</option>

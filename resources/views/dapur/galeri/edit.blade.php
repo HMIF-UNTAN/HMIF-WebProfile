@@ -35,5 +35,35 @@
             <a href="{{ route('dapurgaleri') }}" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600">Kembali</a>
         </div>
     </form>
+    <h5 class="text-xl font-semibold mb-4">Daftar Foto</h5>
+    <div class="overflow-y-auto max-h-[350px] p-2 border rounded">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            @forelse ($files as $file)
+                <div class="bg-white shadow-sm rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <iframe 
+                            src="{{ $file['previewUrl'] }}" 
+                            title="{{ $file['name'] }}"
+                            allow="autoplay" 
+                            class="w-full h-48 border-none"
+                        ></iframe>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-sm text-gray-700 truncate">{{ $file['name'] }}</p>
+                        <div class="mt-2 flex gap-2">
+                            <a href="{{ $file['webViewLink'] }}" target="_blank" class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md hover:bg-blue-600">Lihat</a>
+                            <form action="{{ route('galeri.hapus', ['id' => $album->id, 'fileId' => $file['id']]) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus foto ini?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white text-xs px-3 py-1 rounded-md hover:bg-red-600">Hapus</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <p class="text-center text-gray-500">Tidak ada foto di album ini.</p>
+            @endforelse
+        </div>
+    </div>      
 </div>
 @endsection
