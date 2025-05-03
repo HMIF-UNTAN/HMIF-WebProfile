@@ -28,6 +28,7 @@ class TentangKamiController extends Controller
     $request->validate([
         'judul' => 'required|string|max:255',
         'konten' => 'required',
+        'tipe_informasi' => 'required',
     ]);
 
     $kontenArray = array_filter(array_map('trim', explode("\n", $request->konten)));
@@ -35,6 +36,7 @@ class TentangKamiController extends Controller
     TentangKami::create([
         'judul' => $request->judul,
         'konten' => $kontenArray,
+        'tipe_informasi' => $request->tipe_informasi,
     ]);
 
     TentangKami::updateTentangKamiSeeder();
@@ -54,6 +56,7 @@ class TentangKamiController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'konten' => 'required',
+            'tipe_informasi' => 'required',
         ]);
 
         $tentangkami = TentangKami::findOrFail($id);
@@ -61,6 +64,7 @@ class TentangKamiController extends Controller
         $tentangkami->update([
             'judul' => $request->judul,
             'konten' => $kontenArray,
+            'tipe_informasi' => $request->tipe_informasi,
         ]);
 
         TentangKami::updateTentangKamiSeeder();

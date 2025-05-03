@@ -70,7 +70,7 @@
 
     <div class="mt-6">
         <a href="{{ route('tambahtentangkami') }}" class="inline-block bg-[#0C0221] hover:bg-[#1E1E1E] text-white font-semibold py-2 px-6 rounded-md transition">
-            Tambah Artikel Baru
+            Tambah Data Baru
         </a>
     </div>
 </div>

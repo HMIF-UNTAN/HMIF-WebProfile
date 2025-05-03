@@ -11,9 +11,9 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/swiper.js'])
 </head>
-<body>
+<body class="bg-white">
 
     @include('layouts.partials.navbar')
 

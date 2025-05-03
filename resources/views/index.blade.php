@@ -32,7 +32,7 @@
 </div>
 <div class="bg-white py-5 py-5">
     <div class="container mx-auto px-4 text-center py-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 opacity-0 transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
             Profil Video HMIF FT UNTAN
         </h2>
     
@@ -57,11 +57,11 @@
       
       <!-- Kiri: Tentang Kami -->
       <div class="md:w-1/2 w-full">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 text-center opacity-0 transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 text-center opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
           Tentang Kami
         </h2>
   
-        <div class="swiper swiper-tentangkami w-full py-6 h-[650px] opacity-0 transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
+        <div class="swiper swiper-tentangkami w-full py-6 h-[650px] opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
           <div class="swiper-wrapper h-full">
             @foreach ($dataTentangKami as $item)
               <div class="swiper-slide h-full">
@@ -113,7 +113,11 @@
         <p>&nbsp;</p>
     </div>
 </section>
-<div class="swiper swiper-galeri w-full max-w-full overflow-visible my-10">
+<div class="swiper swiper-galeri w-full max-w-full overflow-visible my-10 text-center bg-white">
+  <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3">
+      Galeri HMIF
+  </h2>
+  <div class="w-12 h-1 bg-[#0F4696] rounded mb-6 mx-auto"></div>
   <div class="swiper-wrapper my-10 mx-0">
     @foreach ($albums as $album)
       <div class="swiper-slide w-[500px] flex items-center justify-center">
@@ -133,4 +137,64 @@
     @endforeach
   </div>
 </div>
+<section class="py-16 bg-white text-center mb-10">
+  <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3 typewriter-text" data-text="Kepengurusan HMIF 2025">
+  </h2> 
+  <div class="w-12 h-1 bg-[#0F4696] rounded mx-auto"></div>
+  <div class="container mx-auto px-4 mt-[50px]">
+    <!-- WRAPPER TOMBOL -->
+    <div class="flex justify-center mb-[80px]">
+      <div class="bg-[#E0EDFF] rounded-2xl py-2 px-4 shadow-sm w-full max-w-7xl flex flex-wrap justify-center gap-1 min-h-[60px]">
+        @foreach ($daftarDivisi as $divisi)
+          <button
+            class="divisi-button w-[200px] min-h-[40px] px-4 py-1 rounded-full text-sm font-medium transition text-center leading-tight whitespace-normal overflow-hidden line-clamp-2 shadow flex items-center justify-center bg-transparent text-gray-500 shadow-none typewriter-text"
+            data-target="divisi-{{ $divisi->id }}"
+            data-text="{{ $divisi->judul }}">
+          </button>
+        @endforeach
+      </div>
+    </div>
+  
+    <!-- WRAPPER CARD TEKS -->
+    <div id="statistik-container" class="flex justify-center gap-[8%] items-center flex-wrap">
+      {{-- Kartu Jumlah Divisi --}}
+      <div class="flex flex-col items-center border border-transparent bg-transparent p-4 rounded-lg shadow w-36 text-[#0F4696] font-bold shadow-none"
+          data-animate="fade-in-left">
+          <svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 20h5v-2a4 4 0 00-3-3.87M9 20h6M4 20h5v-2a4 4 0 00-3-3.87M12 4a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <div class="text-lg font-semibold">{{ count($daftarDivisi)-1 }}</div>
+          <div class="text-sm">Divisi</div>
+      </div>
+  
+      {{-- Area Konten Divisi --}}
+      <div class="relative max-w-lg w-full rounded-lg shadow h-[250px] text-white overflow-hidden p-6 flex items-center justify-center text-center"
+           style="background: linear-gradient(rgba(15, 70, 150, 0.6), rgba(15, 70, 150, 0.6)), url('{{ asset('storage/Background-Footer.jpg') }}'); background-size: cover; background-position: center;"
+           data-animate="fade-in-bottom">
+          @foreach ($daftarDivisi as $divisi)
+              <div id="divisi-{{ $divisi->id }}"
+                   class="divisi-section absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center transition-opacity duration-300 opacity-0 hidden">
+                  <h3 class="text-xl font-bold mb-2 blur-in-out-text text-white" data-text="{{ $divisi->judul }}">
+                  </h3>
+                  <p class="px-4 blur-in-out-text" data-text="{{ $divisi->konten[0] ?? 'Deskripsi Divisi Belum Ditambahkan' }}">
+                  </p>
+              </div>
+          @endforeach
+      </div>
+  
+      <div class="flex flex-col items-center border border-transparent bg-transparent p-4 rounded-lg shadow w-36 text-[#0F4696] font-bold shadow-none"
+          data-animate="fade-in-right">
+          <svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <div class="text-lg font-semibold">{{ count($pengurus) }}</div>
+          <div class="text-sm">Pengurus</div>
+      </div>
+    </div>   
+  </div>  
+</section>
 @endsection

@@ -22,6 +22,14 @@
             <textarea name="konten" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" rows="6" required>{{ old('konten') }}</textarea>
         </div>
 
+        <div class="mb-4">
+            <label for="tipe_informasi" class="form-label">Tipe Informasi</label>
+            <select name="tipe_informasi" id="tipe_informasi" class="form-select bg-white border border-gray-300 rounded-md" required>
+                <option value="Umum" {{ old('tipe_informasi') == 'Umum' ? 'selected' : '' }}>Umum</option>
+                <option value="Divisi" {{ old('tipe_informasi') == 'Divisi' ? 'selected' : '' }}>Divisi</option>
+            </select>
+        </div>
+
         <div class="mt-4">
             <button type="submit" class="w-[10%] bg-[#0C0221] hover:bg-[#1E1E1E] text-white font-semibold py-2 px-6 rounded-md transition">
                 Simpan

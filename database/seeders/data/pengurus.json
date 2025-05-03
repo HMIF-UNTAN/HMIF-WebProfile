@@ -3,9 +3,8 @@
         "nama": "Raden Adang Edithya Astama",
         "nim": "D1041221043",
         "email": "D1041221043@student.untan.ac.id",
-        "no_hp": "0877889167837",
         "jenis_jabatan": "Inti",
-        "foto": "foto_pengurus/Uh1e6l6KirEGiF3pKC4C42Bo6J8uMzc1rzgvG74y.jpg",
+        "foto": "foto_pengurus/qUN4zmLq7skGGDuGdTqbXKsn4yJqpLFyoVHOmIFA.jpg",
         "kepengurusan": {
             "divisi_id": 4,
             "jabatan": "Inti",
@@ -16,12 +15,935 @@
         "nama": "Fikri Al-Jauzi",
         "nim": "D1041221075",
         "email": "D1041221075@student.untan.ac.id",
-        "no_hp": "089521386642",
         "jenis_jabatan": "Inti",
         "foto": "foto_pengurus/QoFrtoa86n1j8qRbCYEISqqs5YxZSx6kXeq8Lwbo.jpg",
         "kepengurusan": {
             "divisi_id": 1,
             "jabatan": "Inti",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Athallah Ghathfan Aqila",
+        "nim": "D1041231060",
+        "email": "D1041231060@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/jZyfmBbcZzL4ipwoyTmQ2nL7rDflOxF0Sc0WLt0X.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Euisy Nayla Hartono",
+        "nim": "D1041221038",
+        "email": "D1041221038@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/OEBwc4f4mPhatCpp6CtEwXdrh4RktXpza0c28u8v.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Faathiya Silmi Mulya",
+        "nim": "D1041221048",
+        "email": "D1041221048@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/028WM60kaA42ByT0EYYqrlFajb1zy9UUZdqrYCmw.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Gladys Putri Aurelia",
+        "nim": "D1041231011",
+        "email": "D1041231011@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/8UqW1nhAAyakHXO2Q17wLHFmKBQix0y7DFrgJSnG.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Ihya Ulumuddin Haruna",
+        "nim": "D1041231095",
+        "email": "D1041231095@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/AI6qXfKiNj7wZRWop5QAqIaKf2qj88PYFrPM266F.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "khairul Fadhil",
+        "nim": "D1041221085",
+        "email": "D1041221085@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/1ugiKecp8ajvdQWs8eMTpkojEKxso30W4rbIeZGJ.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Naufal Zaky Ramadhan",
+        "nim": "D1041231071",
+        "email": "D1041231071@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/d85ZLO5aVZW16OwoS23hlZIwJs3FUILJCvAWHQvg.png",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Fadhil",
+        "nim": "D1041221017",
+        "email": "D1041221017@student.untan.ac.id",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/sbShw7moXRhsqSQYW2d9N7VMznKYQieGaatECAro.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Nayyara Parsa Rizwana",
+        "nim": "D1041231001",
+        "email": "D1041231001@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/O7cm39OdG1GIchRwg7Yhd9nzdsALEY2CEnFgJn3B.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Nur Ichsanul Alif",
+        "nim": "D1041231087",
+        "email": "D1041231087@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/OXkBMMSqaRBiNlQl6itLXxTInseegWNncMIv2Aka.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Tiara Nurwakhida",
+        "nim": "D1041221058",
+        "email": "D1041221058@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/BNHTWmFQRBnHvIXdyZSMROaB5zIRVf1gZbgijiO8.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Zahwa Raesa Adinda",
+        "nim": "D1041231061",
+        "email": "D1041231061@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/vVQCj543iXmQBKhKDvORp5dxZARk35qxu30dg26r.jpg",
+        "kepengurusan": {
+            "divisi_id": 5,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Aufa Hafizah",
+        "nim": "D1041231081",
+        "email": "D1041231081@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/Hr39f6O5qx03IUbeNbWD1JWi9TNGJxmgAHKn8Um7.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Bobby Andrean Japri",
+        "nim": "D1041231034",
+        "email": "D1041231034@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/zzqMcBol5FbGav8olSF2sHmYOotPCB14o2O1pstE.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Clara Oxana Azalia",
+        "nim": "D1041231051",
+        "email": "D1041231051@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/hYus3zHZPCrPGrweWVuJXAG8qKkg14Vfhnu50uFa.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Dhimas Fauzan Al Asri",
+        "nim": "D1041221036",
+        "email": "D1041221036@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/WUAGUH2Q25c5p7hp8LI9opKrGRE10hfX1rr913TJ.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Erik Marlyan Bastian",
+        "nim": "D1041221090",
+        "email": "D1041221090@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/Sy0GPJEujz9Z03ANMRNl3jm9OCLmeFKBhmhFF6ii.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Eva Ramadhina Calista",
+        "nim": "D1041221064",
+        "email": "D1041221064@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/zf8cIgZWyo8NcecfTz0srZuimSUjR0riy1MzLyk1.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Ferdian Destrinata",
+        "nim": "D1041221025",
+        "email": "D1041221025@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/ij5A0nD4wUKIlQuwhFzgqGjO150EggoJxvT1hztP.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Fielbert Sugito",
+        "nim": "D1041231035",
+        "email": "D1041231035@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/Ab24WotJxSgFWKgYijTNwdVmQiDgg0Cdycu5fIV1.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Gemilang Imanuel Perdana",
+        "nim": "D1041221024",
+        "email": "D1041221024@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/3Jzpq7iswN4LP95m1up0Cr9DBgYkcNpJoLn2Twij.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Hanna Karlina Rizal",
+        "nim": "D1041221013",
+        "email": "D1041221013@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/EE00ViTHIacjy4xh8MYrJ5UEtIbAmRZb70rk84RD.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Maharani Nurazizah",
+        "nim": "D1041221005",
+        "email": "D1041221005@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/9X3z9ibmCK8xXtNE6szcri5aJ6H5XLTQM2BnQTN7.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Haikal Ashari",
+        "nim": "D1041221067",
+        "email": "D1041221067@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/FEIbv5ibjQ88Bx6eNhzJRIEfNfBSfbRXc3Aq4o1p.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muthia Nuraini Astari",
+        "nim": "D1041231019",
+        "email": "D1041231019@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/UkWDNFSURfYk39IPvrTxvwV4v9FsjmlbaR7AjVlP.png",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Mutiara Putri Patricia",
+        "nim": "D1041221057",
+        "email": "D1041221057@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/dX15gTrCHKZeID4BXz7aMiXj2WeLXVprF6v7E4nZ.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Radit Arahman Putra",
+        "nim": "D1041231007",
+        "email": "D1041231007@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/wXwSR7JxGDdzCGWQJ7F6rndFktb6oKoddQDOv4My.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Satrya Irvannur Yudha",
+        "nim": "D1041231025",
+        "email": "D1041231025@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/rDB9H6Fx0qLq3oIuyQxjdRMWhRRXd53uIuMiFb1c.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Andrie Wijaya",
+        "nim": "D1041231032",
+        "email": "D1041231032@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/LyT3lg2KAVhjyHRYiQoQnNnl8AKWnouVJvU8ZLU9.png",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Arya Dwi Putra",
+        "nim": "D1041221033",
+        "email": "D1041221033@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/GUm2WkmWManwP8Mi49PosovDkG9E7xDgHXiFnB83.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Ashilah Daniyah Mulya",
+        "nim": "D1041221072",
+        "email": "D1041221072@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/smAmXIsGqVDAJEDxQTxTgjbEY3pTVpEUtJW03bTS.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "I Wayan Satya Widhya Putra Pratama",
+        "nim": "D1041221054",
+        "email": "D1041221054@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/mMoF6kVqLUSk31gAoBQ7qevjDafy8P5TxyUabdkd.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Maghfira Izzati",
+        "nim": "D1041231014",
+        "email": "D1041231014@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/FUp2vGawm0zUpvbHUSiz0oAZ5xf5mmDuD5bhIE9X.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Farras",
+        "nim": "D1041231005",
+        "email": "D1041231005@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/14zuAhhWKJ8Ms3aFHotcYYdGa0TdDIw1WG9qFlKD.png",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Bayu Prasetyo",
+        "nim": "D1041231072",
+        "email": "D1041231072@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/vOzk9caXjtZlRG4KzLdrK44ADyYC36TiVb50G6zE.png",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Fauzi",
+        "nim": "D1041231083",
+        "email": "D1041231083@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/nQiMlLOU3sW9vkIq4m0WYFe2PkmlVWrqFtClXk7e.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Za'im Shidqi",
+        "nim": "D1041221071",
+        "email": "D1041221071@student.untan.ac.id",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/f7LhdZmff86ixId59Eyg4djS20m0HoESUGtFrnMn.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Nasya Khaira Adinia",
+        "nim": "D1041231084",
+        "email": "D1041231084@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/MVXTG1VdnPdQx0phjiSWNHF5jkWqkBs9ar3kP1Ft.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Nelson Davey",
+        "nim": "D1041231058",
+        "email": "D1041231058@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/r85uTSZ92QAr84NNOrdDuJ8UOZ9OxU4vf2mCPXCi.png",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Ryan Naufal Vivaldi",
+        "nim": "D1041231085",
+        "email": "D1041231085@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/geKF5DlCyW1IffAfZTGA1lSBtWhij8EEQaOKFPtm.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Talitha Syakirah Artanti",
+        "nim": "D1041231013",
+        "email": "D1041231013@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/fS0lpa8GgRok1bEHzJvZIgifrhjUckErtPoq7EYD.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Tarisa Nur Safitri",
+        "nim": "D1041221080",
+        "email": "D1041221080@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/hJHaWrBXbB7qWL77xHMlSOKpXsTbZPVezAFIt9og.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Vanes Angelo",
+        "nim": "D1041221003",
+        "email": "D1041221003@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/LNG9gNFWmUpO6oBaeuTUOUjEsp6XtK9uTfe2u4VC.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Willy Wijaya",
+        "nim": "D1041221028",
+        "email": "D1041221028@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/uebUcXKHZqqt8UBaRFt2Qmlt4CEcyWOqz6wIWH2K.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Dewi Agustia",
+        "nim": "D1041221070",
+        "email": "D1041221070@student.untan.ac.id",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/d2humsSvezr8ACCHIXFbTY0xsjweZV1ARmfgEVjy.jpg",
+        "kepengurusan": {
+            "divisi_id": 2,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Balin Niswah",
+        "nim": "D1041221061",
+        "email": "D1041221061@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/W6pNh8iaecItk32zQs32xnW4fiqbQNwPFId3rlZu.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Derangga Aray Abimanyu",
+        "nim": "D1041231002",
+        "email": "D1041231002@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/fsMZeaPd6kcyMPOucn4TNSsshCz43fK9WZljpoE0.png",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Destra Aulia Faza Ananda Putra",
+        "nim": "D1041231044",
+        "email": "D1041231044@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/JowpJ5RdyaFSLX4CL41XfekSvVtR6ck5F4B1Q137.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Dhea Sahara",
+        "nim": "D1041221035",
+        "email": "D1041221035@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/iRBh0rcI5xFb7noTfGufuajks7i3FUQ1IDmucMdB.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Fadhil Muhammad Al-Ghiffari",
+        "nim": "D1041221065",
+        "email": "D1041221065@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/r0JaEerpXW6nBYtt4773q4S9ZATopcfMzLcLlCJ9.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Fatkhulun Nazril Asy\u2019ari",
+        "nim": "D1041231008",
+        "email": "D1041231008@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/WIpNygDSiyVnyyTq5pUcPA3xkdG79CoEZrKX4fiT.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Frederick Ferdyand Halim",
+        "nim": "D1041231029",
+        "email": "D1041231029@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/fYUelkrjKRxSAfrnOcnOt8LMFOAhp8IMRelxH4sh.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Gilbert Nandy Satria",
+        "nim": "D1041221078",
+        "email": "D1041221078@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/tWdtvtjj5udpOOctskO8ffwxK3XWt2vcpnoMIzgr.png",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Adib Qashmal",
+        "nim": "D1041221089",
+        "email": "D1041221089@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/tM6W89m1Br60lw6BOoYl82sqpei2TExaLvBzc2Gg.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Alghifari",
+        "nim": "D1041221044",
+        "email": "D1041221044@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/090NjxzzFmjlNBf5SSLjLohgW3mowrsIb0Ih0pT8.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Amril Sani",
+        "nim": "D1041221039",
+        "email": "D1041221039@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/CZ25SjdjQHIuTNoXXsS5qkJesDIum37mG3apYdHb.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Fathur Rahman",
+        "nim": "D1041231004",
+        "email": "D1041231004@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/krV0ZUWJdzkMjmZ9cOyHBKjKp2i9xPtn6PKb6T1i.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Nazwan Fadhilah",
+        "nim": "D1041221081",
+        "email": "D1041221081@student.untan.ac.id",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/pWgtN3RURX1Fs2OJOpwYYNy6XYmnPwSce0OHDhdH.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhammad Taufiq Fauzan",
+        "nim": "D1041231023",
+        "email": "D1041231023@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/z1SK22hYE8cJApx9RMQ4mLGgf4hrYgW1R9P3Iy3j.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Pratiwi Yona Puspitaningrum",
+        "nim": "D1041221001",
+        "email": "D1041221001@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/kpG0aVuKYjO5DIxTRJ0c3vZh7iJ2O4f8Tl3PWzvP.jpg",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Reisya Pratama",
+        "nim": "D1041221032",
+        "email": "D1041221032@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/kmZNHKibu99cTPA6gwu0cJWJjB08OEJ3fDbOPlCu.png",
+        "kepengurusan": {
+            "divisi_id": 6,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Adeola Anggraini",
+        "nim": "D1041221026",
+        "email": "D1041221026@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/XAUIFk88ulVOlydgydz15nDxFMigeEVGSE85HW51.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Ammar Wirdiyansyah",
+        "nim": "D1041221029",
+        "email": "D1041221029@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/Tra56KjDDm0NhgahCrYmPO030NHCNiXPz1mjT8LU.png",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Cikal Adinugraha Mahadi",
+        "nim": "D1041221051",
+        "email": "D1041221051@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/B57KlVZRaRQFAeGlhKkqCLigeWZdaQuY9RJFx3Pq.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Dian Satrio Prayogo",
+        "nim": "D1041231043",
+        "email": "D1041231043@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/jAAN3BZti8bJjckJYWXVmI3aRp3icpctYbWcOCVq.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Ikbal Sawaludin",
+        "nim": "D1041231052",
+        "email": "D1041231052@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/xWzfSf6dsgybmOBx1VXLb53Gy1ifbKPuWfM2f8IB.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Johanes Satria Christio",
+        "nim": "D1041231076",
+        "email": "D1041231076@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/cv48DrAmmAluB6zeQKeY7FXRrFKssdTiX22TSwH3.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Kevin Saputra",
+        "nim": "D1041221068",
+        "email": "D1041221068@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/BcEDk5hYzF6LHxcS07ZUsLbrQMqfWNnZHMD2WXSj.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Muhamad Rafas",
+        "nim": "D1041221040",
+        "email": "D1041221040@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/3WmBFmuQEdxwstXMKll18UcNRGfjW1NsewNDZiKp.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Rafael Gerhard Panjaitan",
+        "nim": "D1041231094",
+        "email": "D1041231094@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/DI1J3RT1zm4jNBxBKCevoZTiP68qyItpsXUXW2JG.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Rayhan NuerJamman",
+        "nim": "D1041231088",
+        "email": "D1041231088@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/0033t2P9McXY1fmrf2lUJlxAbzQaap2GUr1GCK8a.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Rayhan Dwi Putra",
+        "nim": "D1041231082",
+        "email": "D1041231082@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/XaZMNXl3IOQX8jMMBreDhTlipty2OOXDxt1NdXmL.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Salomo Omkarsba",
+        "nim": "D1041221034",
+        "email": "D1041221034@student.untan.ac.id",
+        "jenis_jabatan": "Inti",
+        "foto": "foto_pengurus/0yaPAwjQA5lhWNb5oYI2yrmaKetdEYcWL5EviQJB.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Inti",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Syariffullah",
+        "nim": "D1041231018",
+        "email": "D1041231018@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/9S5JtzAmnlWpHKljpKn7nevEBakLdRPRywD7oWID.png",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Tisto Pandita",
+        "nim": "D1041231055",
+        "email": "D1041231055@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/WDsXOOleXOgcopgICVRs7rCSiwj5SXmcKC4plccZ.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Zeti Kurniati",
+        "nim": "D1041221002",
+        "email": "D1041221002@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/KrKYsmAreQw38aNaxbj5mk0rNnztq3eEb1nRIY2K.jpg",
+        "kepengurusan": {
+            "divisi_id": 7,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
+    },
+    {
+        "nama": "Garda Sanjaya Hadi Barata",
+        "nim": "D1041221042",
+        "email": "D1041221042@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/awAaw1JPgU2SJdPJTZi08tRz0vaZmjJPP0q0DW2l.jpg",
+        "kepengurusan": {
+            "divisi_id": 8,
+            "jabatan": "Anggota",
             "periode": "2025"
         }
     }

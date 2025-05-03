@@ -5,6 +5,7 @@
         "konten": [
             "Himpunan Mahasiswa Informatika Fakultas Teknik Universitas Tanjungpura atau yang disingkat HMIF FT UNTAN adalah Organisasi Kemahasiswaan yang berfungsi sebagai wadah komunikasi, sarana pembinaan dan pengembangan sikap, mental, akademis serta intelektual yang menjunjung tinggi keimanan dan ketaqwaan kepada Tuhan Yang Maha Esa di Jurusan Informatika Fakultas Teknik Universitas Tanjungpura"
         ],
+        "tipe_informasi": "Umum",
         "created_at": "2025-04-05T11:01:37.000000Z",
         "updated_at": "2025-04-05T11:01:37.000000Z"
     },
@@ -14,6 +15,7 @@
         "konten": [
             "Mewujudkan Himpunan Mahasiswa Informatika UNTAN sebagai organisasi yang memiliki pribadi-pribadi yang unggul dan profesional."
         ],
+        "tipe_informasi": "Umum",
         "created_at": "2025-04-05T11:01:57.000000Z",
         "updated_at": "2025-04-05T11:01:57.000000Z"
     },
@@ -26,6 +28,7 @@
             "Meningkatkan kebersamaan dan kekeluargaan diantara seluruh mahasiswa Informatika UNTAN.",
             "Berperan aktif dalam mengembangkan dan memajukan teknologi informasi secara global."
         ],
+        "tipe_informasi": "Umum",
         "created_at": "2025-04-05T11:02:10.000000Z",
         "updated_at": "2025-04-05T11:02:10.000000Z"
     },
@@ -36,6 +39,7 @@
             "Ikut mengusahakan tercapainya tujuan nasional dalam bentuk kegiatan ekstrakurikuler di dalam maupun di luar kampus yang bersifat sukarela.",
             "Mengembangkan kemampuan keprofesian mahasiswa Jurusan Informatika tanpa melupakan hal-hal lain di luar masalah keprofesian."
         ],
+        "tipe_informasi": "Umum",
         "created_at": "2025-04-05T11:02:25.000000Z",
         "updated_at": "2025-04-05T11:02:25.000000Z"
     },
@@ -45,6 +49,7 @@
         "konten": [
             "HMIF FT UNTAN berfungsi sebagai wadah komunikasi, sarana pembinaan dan pengembangan sikap, mental, akademis serta intelektual yang menjunjung tinggi keimanan dan ketaqwaan kepada Tuhan Yang Maha Esa di Jurusan Informatika Fakultas Teknik Universitas Tanjungpura."
         ],
+        "tipe_informasi": "Umum",
         "created_at": "2025-04-05T11:02:39.000000Z",
         "updated_at": "2025-04-05T11:02:39.000000Z"
     },
@@ -54,7 +59,68 @@
         "konten": [
             "Kepengurusan HMIF terdiri dari Ketua Himpunan, Sekretaris, Bendahara dan 5 badan pengurus bermandat dengan tugas dan program kerja yang berbeda."
         ],
+        "tipe_informasi": "Umum",
         "created_at": "2025-04-05T11:04:00.000000Z",
         "updated_at": "2025-04-05T11:04:00.000000Z"
+    },
+    {
+        "id": 8,
+        "judul": "Pengurus Harian",
+        "konten": [
+            "Pengurus Harian bertujuan untuk mengorganisir dan memobilisasi jalannya aktivitas HMIF FT UNTAN."
+        ],
+        "tipe_informasi": "Divisi",
+        "created_at": "2025-04-29T04:42:16.000000Z",
+        "updated_at": "2025-04-29T04:50:14.000000Z"
+    },
+    {
+        "id": 9,
+        "judul": "Sumber Daya Mahasiswa",
+        "konten": [
+            "Divisi SDM bertujuan untuk Membina dan meningkatkan kemampuan anggota dalam memiliki kerangka berpikir dengan tujuan pengembangan dan kesinambungan organisasi untuk mempersiapkan lulusan yang berkompeten."
+        ],
+        "tipe_informasi": "Divisi",
+        "created_at": "2025-04-29T04:42:49.000000Z",
+        "updated_at": "2025-04-29T04:49:53.000000Z"
+    },
+    {
+        "id": 10,
+        "judul": "Usaha Dana, Profesi dan Jasa",
+        "konten": [
+            "Divisi UDPJ bertujuan untuk Menjalin hubungan baik dengan mitra kerja dan mengusahakan pendanaan organisasi dengan jalan yang halal serta Mengembangkan potensi keahlian keprofesian anggota HMIF FT UNTAN dan menyediakan sumber daya yang berkompeten di bidang Informatika."
+        ],
+        "tipe_informasi": "Divisi",
+        "created_at": "2025-04-29T04:43:20.000000Z",
+        "updated_at": "2025-04-29T04:54:15.000000Z"
+    },
+    {
+        "id": 11,
+        "judul": "Kesejahteraan Rumah Tangga",
+        "konten": [
+            "Divisi KESRUT bertujuan untuk Melakukan pembenahan, pengembangan dan pemeliharaan sarana dan prasarana yang ada di lingkungan sekretariat HMIF FT UNTAN dan Menjadikan HMIF FT UNTAN sebagai pusat aktivitas Studi mahasiswa Jurusan Informatika Fakultas Teknik Universitas Tanjungpura yang ideal."
+        ],
+        "tipe_informasi": "Divisi",
+        "created_at": "2025-04-29T04:43:42.000000Z",
+        "updated_at": "2025-04-29T04:54:23.000000Z"
+    },
+    {
+        "id": 12,
+        "judul": "Pendidikan dan Riset Teknologi",
+        "konten": [
+            "Divisi PENRISTEK bertujuan untuk Membentuk kader yang memiliki hard skill dan soft skill serta Menjadi wadah pusat studi ilmiah di bidang IT."
+        ],
+        "tipe_informasi": "Divisi",
+        "created_at": "2025-04-29T04:44:35.000000Z",
+        "updated_at": "2025-04-29T04:54:38.000000Z"
+    },
+    {
+        "id": 13,
+        "judul": "Komunikasi dan Informasi",
+        "konten": [
+            "Divisi KOMINFO bertujuan untuk Mensosialisasikan dan meningkatkan eksistensi HMIF FT UNTAN."
+        ],
+        "tipe_informasi": "Divisi",
+        "created_at": "2025-04-29T04:44:59.000000Z",
+        "updated_at": "2025-04-29T04:54:46.000000Z"
     }
 ]

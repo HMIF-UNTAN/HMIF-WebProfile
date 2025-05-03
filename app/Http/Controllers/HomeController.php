@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Divisi;
 use App\Models\Galeri;
+use App\Models\Pengurus;
 use App\Models\TentangKami;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,9 +16,11 @@ class HomeController extends Controller
     public function index(GoogleDriveService $driveService)
     {
         $himpunanInfo = TentangKami::find(2);
-        $dataTentangKami = TentangKami::all();
+        $dataTentangKami = TentangKami::where('tipe_informasi', 'Umum')->get();
         $newestArticles = Artikel::latest()->take(2)->get();
         $albums = Galeri::inRandomOrder()->get();
+        $daftarDivisi = TentangKami::where('tipe_informasi', 'Divisi')->get();
+        $pengurus = Pengurus::all();
 
         // Fallback
         $defaultData = [
@@ -29,6 +33,8 @@ class HomeController extends Controller
             'dataTentangKami' => $dataTentangKami,
             'newestArticles' => $newestArticles,
             'albums' => $albums,
+            'daftarDivisi' => $daftarDivisi,
+            'pengurus' => $pengurus,
         ]);
     }
 }

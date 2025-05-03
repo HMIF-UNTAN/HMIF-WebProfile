@@ -17,7 +17,6 @@ class Pengurus extends Model
         'nama',
         'nim',
         'email',
-        'no_hp',
         'jenis_jabatan',
         'foto',
     ];
@@ -43,7 +42,6 @@ class Pengurus extends Model
                 'nama' => $p->nama,
                 'nim' => $p->nim,
                 'email' => $p->email,
-                'no_hp' => $p->no_hp,
                 'jenis_jabatan' => $p->jenis_jabatan,
                 'foto' => $p->foto,
                 'kepengurusan' => [
