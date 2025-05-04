@@ -2,106 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
-    color: #1E1E1E;
-}
+@layer utilities {
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f8f9fa;
+        color: #1E1E1E;
+    }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #0C0221;
-}
+    h1, h2, h3, h4, h5, h6 {
+        color: #0C0221;
+    }
 
-.table thead {
-    background-color: #E8D7CC;
-}
+    .table thead {
+        background-color: #E8D7CC;
+    }
 
-.btn-primary-custom {
-    background-color: #0F4696;
-    color: #fff;
-    border: none;
-}
+    .btn-primary-custom {
+        background-color: #0F4696;
+        color: #fff;
+        border: none;
+    }
 
-.btn-danger-custom {
-    background-color: #8B0000;
-    color: #fff;
-    border: none;
-}
+    .btn-danger-custom {
+        background-color: #8B0000;
+        color: #fff;
+        border: none;
+    }
 
-.badge-superadmin {
-    background-color: #8B0000;
-}
+    .badge-superadmin {
+        background-color: #8B0000;
+    }
 
-.badge-admin {
-    background-color: #0F4696;
-}
+    .badge-admin {
+        background-color: #0F4696;
+    }
 
-.badge-default {
-    background-color: #1E1E1E;
-}
+    .badge-default {
+        background-color: #1E1E1E;
+    }
 
-.card-custom {
-    background-color: #F7F7F7;
-    border: 1px solid #E8D7CC;
-}
-#mainNavbar.scrolled {
-    background-color: #ffffff !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 300ms ease-in-out;
-}
+    .card-custom {
+        background-color: #F7F7F7;
+        border: 1px solid #E8D7CC;
+    }
+    #mainNavbar.scrolled {
+        background-color: #ffffff !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 300ms ease-in-out;
+    }
 
-#mainNavbar.scrolled .nav-link,
-#mainNavbar.scrolled .navbar-brand {
-    color: #1e1e1e !important;
-}
+    #mainNavbar.scrolled .nav-link,
+    #mainNavbar.scrolled .navbar-brand {
+        color: #1e1e1e !important;
+    }
 
-.custom-shape-divider-bottom-1745286436 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
+    .custom-shape-divider-bottom-1745286436 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
 
-.custom-shape-divider-bottom-1745286436 svg {
-    position: relative;
-    display: block;
-    width: calc(112% + 1.3px);
-    height: 152px;
-}
+    .custom-shape-divider-bottom-1745286436 svg {
+        position: relative;
+        display: block;
+        width: calc(112% + 1.3px);
+        height: 152px;
+    }
 
-.custom-shape-divider-bottom-1745286436 .shape-fill {
-    fill: #FFFFFF;
-}
+    .custom-shape-divider-bottom-1745286436 .shape-fill {
+        fill: #FFFFFF;
+    }
 
-.swiper-slide {
-    transition: all 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform-origin: center center;
-    cursor: pointer;
-    z-index: 1;
-}
+    .swiper-slide {
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform-origin: center center;
+        cursor: pointer;
+        z-index: 1;
+    }
 
-.swiper-slide:not(.swiper-slide-active) {
-    filter: brightness(0.9) blur(1px);
-    transform: scale(0.9);
-    opacity: 1;
-    position: relative;
-}
+    .swiper-slide:not(.swiper-slide-active) {
+        filter: brightness(0.9) blur(1px);
+        transform: scale(0.9);
+        opacity: 1;
+        position: relative;
+    }
 
-.swiper-slide-active {
-    transform: translateY(0px) scale(1);
-    filter: none;
-    opacity: 1;
-    z-index: 10;
-}
+    .swiper-slide-active {
+        transform: translateY(0px) scale(1);
+        filter: none;
+        opacity: 1;
+        z-index: 10;
+    }
 
-.swiper-slide p,
-.swiper-slide ol {
-    line-height: 1.5;
-    transition: font-size 0.3s ease;
+    .swiper-slide p,
+    .swiper-slide ol {
+        line-height: 1.5;
+        transition: font-size 0.3s ease;
+    }
+
+    .perspective {
+        perspective: 1000px;
+    }
+
+    .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+    }
+
+    .rotate-y-180 {
+    transform: rotateY(180deg);
+    }
+
+    .backface-hidden {
+    backface-visibility: hidden;
+    }
+
+    .preserve-3d {
+        transform-style: preserve-3d;
+    }
 }

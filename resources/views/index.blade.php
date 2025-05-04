@@ -53,60 +53,52 @@
     </div>
 </section>
 <div class="bg-white text-gray-800 py-10">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-10 items-start">
-      
-      <!-- Kiri: Tentang Kami -->
-      <div class="md:w-1/2 w-full">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 text-center opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col gap-10 items-start">
+    <!-- Full width: Tentang Kami -->
+    <div class="w-full">
+      <div class="opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3 text-center">
           Tentang Kami
         </h2>
-  
-        <div class="swiper swiper-tentangkami w-full py-6 h-[650px] opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
-          <div class="swiper-wrapper h-full">
-            @foreach ($dataTentangKami as $item)
-              <div class="swiper-slide h-full">
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 h-full flex flex-col justify-center items-center text-center">
-                  <h3 class="text-xl font-bold text-[#0F4696] mb-4">
-                    {{ $item['judul'] }}
-                  </h3>
-                  @if (is_array($item['konten']))
-                    @if (Str::contains(strtolower($item['judul']), 'misi'))
-                      <ol class="list-decimal list-inside text-sm space-y-1 text-dynamic transition-all duration-300">
-                        @foreach ($item['konten'] as $poin)
-                          <li>{{ $poin }}</li>
-                        @endforeach
-                      </ol>
-                    @else
-                      <p class="text-sm text-dynamic transition-all duration-300">{{ $item['konten'][0] }}</p>
-                    @endif
-                  @else
-                    <p class="text-sm">{{ $item['konten'] }}</p>
-                  @endif
-                </div>
+        <div class="w-12 h-1 bg-[#0F4696] rounded mb-6 mx-auto"></div>
+      </div> 
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full py-6">
+        @foreach ($dataTentangKami as $index => $item)
+          <!-- Bungkus seluruh card dalam .group -->
+          <div class="group relative w-full h-80 [perspective:1000px] opacity-0 transform transition-opacity duration-700 will-change-transform"
+              data-animate="fade-in-top"
+              style="transition-delay: {{ $index * 100 }}ms">
+
+            <!-- Yang diputar: bagian dalam -->
+            <div class="relative w-full h-full transition-transform duration-700 transform-style preserve-3d group-hover:rotate-y-180 rounded-xl shadow-md">
+              
+              <!-- Front -->
+              <div class="absolute w-full h-full bg-white border border-[#0F4696] rounded-xl backface-hidden flex flex-col justify-center items-center text-center p-6">
+                <h3 class="text-xl font-bold text-[#0F4696]">{{ $item['judul'] }}</h3>
               </div>
-            @endforeach
+
+              <!-- Back -->
+              <div class="absolute w-full h-full bg-[#0F4696] border border-[#0F4696] rounded-xl shadow-md backface-hidden transform rotate-y-180 flex items-center justify-center text-white text-center">
+                @if (is_array($item['konten']))
+                  @if (Str::contains(strtolower($item['judul']), 'misi'))
+                    <ol class="list-decimal list-inside text-sm space-y-1 px-4">
+                      @foreach ($item['konten'] as $poin)
+                        <li>{{ $poin }}</li>
+                      @endforeach
+                    </ol>
+                  @else
+                    <p class="text-sm px-4">{{ $item['konten'][0] }}</p>
+                  @endif
+                @else
+                  <p class="text-sm px-4">{{ $item['konten'] }}</p>
+                @endif
+              </div>
+            </div>
           </div>
-        </div>        
-      </div>
-  
-      <!-- Kanan: Newest Article -->
-      <div class="md:w-1/2 w-full will-change-transform text-center" data-animate="fade-in-top">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 will-change-transform">Newest Articles</h2>
-        
-        <div class="flex flex-col gap-4 h-[650px]">
-            @foreach ($newestArticles as $article)
-                <div class="bg-white rounded-lg shadow hover:shadow-md transition h-1/2 flex flex-col">
-                    <div class="h-2/3">
-                        <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->judul }}" class="w-full h-full object-cover rounded-t-lg">
-                    </div>
-                    <div class="h-1/3 flex items-center justify-center px-4">
-                        <a href="#" class="text-center text-xl font-bold text-[#0F4696]">{{ $article->judul }}</a>
-                    </div>
-                </div>
-            @endforeach
-        </div>          
+        @endforeach
       </div>
     </div>
+  </div>  
 </div>  
 <section class="bg-[#0F4696]">
     <div class="container p-3">
@@ -114,10 +106,12 @@
     </div>
 </section>
 <div class="swiper swiper-galeri w-full max-w-full overflow-visible my-10 text-center bg-white">
-  <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3">
+  <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3 opacity-0 transform transition-opacity duration-700 will-change-transform"
+      data-animate="fade-in-top">
       Galeri HMIF
   </h2>
-  <div class="w-12 h-1 bg-[#0F4696] rounded mb-6 mx-auto"></div>
+  <div class="w-12 h-1 bg-[#0F4696] rounded mb-6 mx-auto opacity-0 transform transition-opacity duration-700 will-change-transform"
+        data-animate="fade-in-top"></div>
   <div class="swiper-wrapper my-10 mx-0">
     @foreach ($albums as $album)
       <div class="swiper-slide w-[500px] flex items-center justify-center">

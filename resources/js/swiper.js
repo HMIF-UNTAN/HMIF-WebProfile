@@ -7,36 +7,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const swiperTentangKami = new Swiper('.swiper-tentangkami', {
-        modules: [Navigation, Pagination, EffectCoverflow, Autoplay],
-        direction: 'vertical',
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 2,
-        spaceBetween: -70,
-        effect: 'coverflow',
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 20,
-            depth: 200,
-            modifier: 2,
-            slideShadows: true,
-        },
-        grabCursor: true,
-        mousewheel: true,
-        pagination: {
-            el: '.swiper-tentangkami .swiper-pagination',
-            clickable: true,
-        },
-        on: {
-            init() {
-                adjustTextSize(this);
-            },
-            slideChangeTransitionEnd() {
-                adjustTextSize(this);
-            }
-        }
-    });
 
     const swiperGaleri = new Swiper('.swiper-galeri', {
       modules: [Navigation, Pagination, EffectCoverflow, Autoplay],
