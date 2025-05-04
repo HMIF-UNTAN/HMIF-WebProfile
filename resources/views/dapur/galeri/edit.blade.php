@@ -35,6 +35,35 @@
             <a href="{{ route('dapurgaleri') }}" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600">Kembali</a>
         </div>
     </form>
+    <h4 class="text-xl font-semibold mt-10 mb-4">Upload Foto ke Album</h4>
+
+    <form action="{{ route('galeri.upload', $album->id) }}" method="POST" enctype="multipart/form-data" class="mb-8">
+        @csrf
+
+        <div class="mb-4">
+            <label for="foto" class="block text-sm font-medium text-gray-700">Pilih Foto (maks. 20 foto, masing-masing maks. 35MB)</label>
+            <input type="file" id="foto" name="foto[]" multiple accept="image/*"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            @error('foto')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
+            @error('foto.*')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-4">
+            <label for="custom_name" class="block text-sm font-medium text-gray-700">Nama File Khusus (opsional)</label>
+            <input type="text" id="custom_name" name="custom_name" placeholder="contoh: kegiatan_hmif"
+                value="{{ old('custom_name') }}"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <p class="text-gray-500 text-sm mt-1">Jika diisi, nama file akan menjadi: <i>nama_khusus_1.jpg</i>, <i>nama_khusus_2.jpg</i>, dst.</p>
+        </div>
+
+        <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">
+            Upload Foto
+        </button>
+    </form>
     <h5 class="text-xl font-semibold mb-4">Daftar Foto</h5>
     <div class="overflow-y-auto max-h-[350px] p-2 border rounded">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
