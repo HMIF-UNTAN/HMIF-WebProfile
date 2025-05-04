@@ -13,11 +13,11 @@ use App\Services\GoogleDriveService;
 
 class HomeController extends Controller
 {
-    public function index(GoogleDriveService $driveService)
+    public function index()
     {
         $himpunanInfo = TentangKami::find(2);
         $dataTentangKami = TentangKami::where('tipe_informasi', 'Umum')->get();
-        $newestArticles = Artikel::latest()->take(2)->get();
+        $newestArticles = Artikel::latest()->take(10)->get();
         $albums = Galeri::inRandomOrder()->get();
         $daftarDivisi = TentangKami::where('tipe_informasi', 'Divisi')->get();
         $pengurus = Pengurus::all();

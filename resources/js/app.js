@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
           currentSection.classList.add('hidden');
           currentSection.classList.remove('opacity-0');
           showSection(newSection);
-        }, 300);
+        }, 200);
       });
     } else if (!currentSection) {
       showSection(newSection);

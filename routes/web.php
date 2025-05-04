@@ -35,6 +35,11 @@ Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(fun
     Route::get('/kontak', [KontakController::class, 'indexDapur'])->name('dapurkontak');
 });
 
+Route::controller(ArtikelController::class)->group(function () {
+    Route::get('/artikel', 'index')->name('artikel.index'); // halaman daftar artikel (jika perlu)
+    Route::get('/artikel/{slug}', 'show')->name('artikel.show'); // detail artikel berdasarkan slug
+});
+
 Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(Function(){
     Route::get('/artikel/tambah', 'tambahArtikel')->name('tambahArtikel');
     Route::post('/artikel', 'store')->name('artikel.store'); 

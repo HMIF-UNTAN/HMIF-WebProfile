@@ -44,29 +44,35 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });       
 
-    document.querySelectorAll('.swiper-tentangkami .swiper-slide').forEach((slide) => {
-        slide.addEventListener('click', () => {
-            if (!slide.classList.contains('swiper-slide-active')) {
-                const index = parseInt(slide.getAttribute('data-swiper-slide-index'), 10);
-                swiperTentangKami.slideToLoop(index);
-            }
-        });
-    });
-
-    function adjustTextSize(swiper) {
-        swiper.slides.forEach(slide => {
-            const texts = slide.querySelectorAll('.text-dynamic');
-            if (slide.classList.contains('swiper-slide-active')) {
-                texts.forEach(el => {
-                    el.classList.remove('text-sm');
-                    el.classList.add('text-[15px]', 'md:text-[16px]');
-                });
-            } else {
-                texts.forEach(el => {
-                    el.classList.remove('text-[15px]', 'md:text-[16px]');
-                    el.classList.add('text-sm');
-                });
-            }
-        });
-    }  
+    const swiperArtikel = new Swiper(".artikel-carousel", {
+      modules: [Autoplay],
+      slidesPerView: 1, 
+      spaceBetween: 20,
+      loop: true,
+      speed: 3000,
+      direction: 'horizontal',
+      autoplay: {
+        delay: 0, // Tidak ada jeda antar autoplay
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 5,
+        },
+        1280: {
+          slidesPerView: 5,
+        },
+        1600: {
+          slidesPerView: 5,
+        },
+        1920: {
+          slidesPerView: 7,
+        },
+        2560: {
+          slidesPerView: 7,
+        },
+      },
+    });    
 });

@@ -191,4 +191,34 @@
     </div>   
   </div>  
 </section>
+<section class="py-12 bg-white">
+  <div class="w-full px-4">
+    <h2 class="text-3xl font-bold text-[#0F4696] mb-3 text-center transform transition-opacity duration-700 will-change-transform" 
+        data-animate="fade-in-top">
+        Artikel Terbaru
+    </h2>
+    <div class="w-12 h-1 bg-[#0F4696] rounded mx-auto opacity-0 transform transition-opacity duration-700 will-change-transform" 
+        data-animate="fade-in-top"></div>
+    
+    <div class="swiper artikel-carousel mt-10">
+      <div class="swiper-wrapper">
+        @foreach ($newestArticles as $article)
+          <div class="swiper-slide w-auto h-full mb-10">
+            <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 hover:scale-[1.02] overflow-hidden max-w-xs sm:max-w-sm md:max-w-md flex flex-col min-h-[330px]">
+              <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->judul }}" class="w-full h-48 object-cover">
+              <div class="p-4 flex flex-col flex-grow">
+                <h3 class="text-lg font-semibold text-[#0F4696] leading-tight line-clamp-2">{{ $article->judul }}</h3>
+                <div class="mt-auto pt-4">
+                  <a href="{{ route('artikel.show', $article->slug) }}" class="text-sm text-[#0F4696] font-semibold hover:underline">
+                    Baca Selengkapnya →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    </div>
+  </div>
+</section>
 @endsection
