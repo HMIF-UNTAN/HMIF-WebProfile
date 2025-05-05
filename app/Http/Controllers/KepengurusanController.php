@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Divisi;
-use App\Models\Pengurus;
 use App\Models\Kepengurusan;
+use App\Models\Pengurus;
+use App\Models\TentangKami;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,18 @@ class KepengurusanController extends Controller
 {
     public function index()
     {
-        return view('kepengurusan.index');
+        $daftarDivisi = TentangKami::where('tipe_informasi', 'Divisi')->get();
+        $kepengurusan = Kepengurusan::with(['pengurus', 'divisi'])->get();
+        $semuaDivisi = Divisi::all();
+
+        // Buat mapping berdasarkan nama divisi
+        $pengurusPerDivisiNama = $kepengurusan->groupBy(fn($item) => $item->divisi->nama);
+
+        return view('kepengurusan.index', [
+            'daftarDivisi' => $daftarDivisi,
+            'pengurusPerDivisiNama' => $pengurusPerDivisiNama,
+            'semuaDivisi' => $semuaDivisi,
+        ]);
     }
 
     public function indexDapur()

@@ -31,7 +31,7 @@ Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(fun
     Route::get('/artikel', [ArtikelController::class, 'indexDapur'])->name('dapurartikel');
     Route::get('/tentang-kami', [TentangKamiController::class, 'indexDapur'])->name('dapurtentangkami');
     Route::get('/galeri', [GaleriController::class, 'indexDapur'])->name('dapurgaleri');
-    Route::get('/kepengurusan', [KepengurusanController::class, 'indexDapur'])->name('dapurpengurus');
+    Route::get('/pengurus', [KepengurusanController::class, 'indexDapur'])->name('dapurpengurus');
     Route::get('/kontak', [KontakController::class, 'indexDapur'])->name('dapurkontak');
 });
 
@@ -70,6 +70,10 @@ Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware([
     Route::put('/update/{id}', 'update')->name('galeri.update');
     Route::delete('/{id}', 'destroy')->name('galeri.destroy');
     Route::get('/galeri/download-seeder', 'downloadSeederFromDrive')->name('galeri.downloadSeeder');
+});
+
+Route::controller(KepengurusanController::class)->group(function () {
+    Route::get('/pengurus', 'index')->name('pengurus.index');
 });
 
 Route::controller(KepengurusanController::class)->prefix('dapur/pengurus')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
