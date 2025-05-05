@@ -17,6 +17,12 @@ class GaleriController extends Controller
         return view('dapur.galeri.index', compact('galeri'));
     }
 
+    public function show()
+    {
+        $galeri = Galeri::all();
+        return view('galeri.index', compact('galeri'));
+    }
+
     public function tambahalbum()
     {
         return view('dapur.galeri.store');
