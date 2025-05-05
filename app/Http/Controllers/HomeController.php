@@ -28,13 +28,13 @@ class HomeController extends Controller
             'konten' => 'Deskripsi belum tersedia.',
         ];
 
-        return view('index', [
-            'himpunanInfo' => $himpunanInfo ?: (object) $defaultData,
-            'dataTentangKami' => $dataTentangKami,
-            'newestArticles' => $newestArticles,
-            'albums' => $albums,
-            'daftarDivisi' => $daftarDivisi,
-            'pengurus' => $pengurus,
-        ]);
+            return view('index', [
+                'himpunanInfo' => $himpunanInfo ?: (object) $defaultData,
+                'dataTentangKami' => $dataTentangKami,
+                'newestArticles' => $newestArticles,
+                'albums' => $albums,
+                'daftarDivisi' => $daftarDivisi,
+                'pengurus' => $pengurus,
+            ]);
     }
 }
