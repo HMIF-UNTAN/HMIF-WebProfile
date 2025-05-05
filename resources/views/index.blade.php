@@ -198,7 +198,7 @@
     </div>   
   </div>  
 </section>
-<section class="py-12 bg-white">
+<section class="pt-12  bg-white">
   <div class="w-full px-4">
     <h2 class="text-3xl font-bold text-[#0F4696] mb-3 text-center transform transition-opacity duration-700 will-change-transform" 
         data-animate="fade-in-top">

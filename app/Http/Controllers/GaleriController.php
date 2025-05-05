@@ -17,11 +17,20 @@ class GaleriController extends Controller
         return view('dapur.galeri.index', compact('galeri'));
     }
 
-    public function show()
+    public function index()
     {
-        $galeri = Galeri::all();
+        $galeri = Galeri::latest()->paginate(9);
         return view('galeri.index', compact('galeri'));
     }
+
+    public function show($id, GoogleDriveService $drive)
+    {
+        $album = Galeri::findOrFail($id);
+        $files = $drive->listFilesInFolder($album->google_drive_folder_id);
+
+        return view('galeri.show', compact('files', 'album'));
+    }
+
 
     public function tambahalbum()
     {
