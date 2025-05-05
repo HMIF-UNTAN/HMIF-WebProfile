@@ -17,9 +17,9 @@
     </div>
 
     <div id="navbarNav" class="hidden lg:flex space-x-6 font-medium">
-      <a href="{{ route('home') }}" class="text-white scroll-text hover:text-blue-300 transition">Home</a>
-      <a href="{{ route('pengurus.index') }}" class="text-white scroll-text hover:text-blue-300 transition">Pengurus</a>
-      <a href="#galeri" class="text-white scroll-text hover:text-blue-300 transition">Galeri</a>
+      <a href="{{ route('home') }}" class="text-white scroll-text hover:text-blue-300 transition {{ request()->routeIs('home') ? 'font-bold' : '' }}">Home</a>
+      <a href="{{ route('pengurus.index') }}" class="text-white scroll-text hover:text-blue-300 transition {{ Route::is('pengurus.index') ? 'font-bold' : '' }}">Pengurus</a>
+      <a href="{{ route('galeri.index') }}" class="text-white scroll-text hover:text-blue-300 transition {{ Request::is('galeri*') ? 'font-bold' : '' }}">Galeri</a>
       <a href="#artikel" class="text-white scroll-text hover:text-blue-300 transition">Artikel</a>
       <a href="#kontak" class="text-white scroll-text hover:text-blue-300 transition">Ikatan Alumni</a>
     </div>

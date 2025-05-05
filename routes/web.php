@@ -57,8 +57,8 @@ Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->m
 });
 
 Route::controller(GaleriController::class)->group(function () {
-    Route::get('/galeri', 'index')->name('galeri.index'); // halaman daftar artikel (jika perlu)
-    Route::get('/galeri/{id}', 'show')->name('galeri.show'); // detail artikel berdasarkan slug
+    Route::get('/galeri', 'index')->name('galeri.index'); 
+    Route::get('/galeri/{id}', 'show')->name('galeri.show');
 });
 
 Route::controller(GaleriController::class)->prefix('dapur/galeri')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
