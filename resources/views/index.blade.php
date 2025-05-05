@@ -112,24 +112,31 @@
   </h2>
   <div class="w-12 h-1 bg-[#0F4696] rounded mb-6 mx-auto opacity-0 transform transition-opacity duration-700 will-change-transform"
         data-animate="fade-in-top"></div>
-  <div class="swiper-wrapper my-10 mx-0">
-    @foreach ($albums as $album)
-      <div class="swiper-slide w-[500px] flex items-center justify-center">
-        <div class="relative w-full h-[450px] bg-white shadow-lg rounded-2xl overflow-hidden">
-          <div class="absolute inset-0">
-            <img src="{{ Storage::url($album->thumbnail) }}" alt="{{ $album->nama_album }}" class="w-full h-full object-cover" />
-          </div>
-          <div class="absolute bottom-0 left-0 right-0 w-full h-1/2 flex items-end">
-            <div class="w-full p-10 bg-gradient-to-t from-[#0F4696] to-transparent">
-              <h4 class="text-lg font-bold text-white text-start w-[50%]">
-                {{ $album->nama_album }}
-              </h4>
+        <div class="swiper-wrapper my-10 mx-0">
+          @foreach ($albums as $album)
+            <div class="swiper-slide w-[500px] flex items-center justify-center group">
+              <a href="{{ route('galeri.show', $album->id) }}" class="block w-full h-full">
+                <div class="relative w-full h-[450px] bg-white shadow-lg rounded-2xl overflow-hidden">
+                  <div class="absolute inset-0">
+                    <img src="{{ Storage::url($album->thumbnail) }}" alt="{{ $album->nama_album }}" class="w-full h-full object-cover" />
+                  </div>
+      
+                  {{-- Gradient Overlay --}}
+                  <div class="absolute bottom-0 left-0 right-0 w-full h-1/2 group-hover:h-full transition-all duration-500 ease-in-out bg-gradient-to-t from-[#0F4696] to-transparent z-10"></div>
+      
+                  {{-- Text --}}
+                  <div class="absolute top-1/2 left-1/2 z-20 text-white 
+                              transform -translate-x-1/2 translate-y-[120px] 
+                              group-hover:translate-y-[-50%] 
+                              transition-transform duration-500 ease-in-out 
+                              text-center">
+                    <h4 class="text-lg font-bold text-white">{{ $album->nama_album }}</h4>
+                  </div>
+                </div>
+              </a>
             </div>
-          </div>          
-        </div>
-      </div>
-    @endforeach
-  </div>
+          @endforeach
+      </div>              
 </div>
 <section class="py-16 bg-white text-center mb-10">
   <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3 typewriter-text" data-text="Kepengurusan HMIF 2025">
