@@ -13,7 +13,7 @@ class Artikel extends Model
 
     protected $table = 'artikels';
     protected $guarded = [];
-    protected $fillable = ['judul', 'konten', 'slug', 'thumbnail', 'tanggal_kegiatan'];
+    protected $fillable = ['judul', 'konten', 'slug', 'thumbnail', 'tanggal_kegiatan', 'kategori_kegiatan'];
 
     protected static function booted()
     {

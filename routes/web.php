@@ -36,8 +36,8 @@ Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(fun
 });
 
 Route::controller(ArtikelController::class)->group(function () {
-    Route::get('/artikel', 'index')->name('artikel.index'); // halaman daftar artikel (jika perlu)
-    Route::get('/artikel/{slug}', 'show')->name('artikel.show'); // detail artikel berdasarkan slug
+    Route::get('/artikel', 'index')->name('artikel.index');
+    Route::get('/artikel/{slug_id}', [ArtikelController::class, 'show'])->name('artikel.show');
 });
 
 Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(Function(){

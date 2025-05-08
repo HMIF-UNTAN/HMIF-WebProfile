@@ -1,5 +1,14 @@
+// Mobile Menu Dropdown Toggle
 document.getElementById('menuToggle').addEventListener('click', function () {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
+  const menu = document.getElementById('mobileMenu');
+
+  if (menu.classList.contains('max-h-0')) {
+    menu.classList.remove('max-h-0', 'py-0');
+    menu.classList.add('max-h-96', 'py-4');
+  } else {
+    menu.classList.remove('max-h-96', 'py-4');
+    menu.classList.add('max-h-0', 'py-0');
+  }
 });
 
 // Scroll Behavior Navbar

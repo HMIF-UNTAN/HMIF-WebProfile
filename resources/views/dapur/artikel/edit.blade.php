@@ -24,6 +24,16 @@
         </div>
 
         <div>
+            <label for="kategori_kegiatan" class="block text-sm font-medium text-gray-700">Kategori Kegiatan</label>
+            <select name="kategori_kegiatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+                <option value="">Pilih Kategori</option>
+                <option value="Fakultas" {{ old('kategori_kegiatan', $artikel->kategori_kegiatan) === 'Fakultas' ? 'selected' : '' }}>Fakultas</option>
+                <option value="Himpunan" {{ old('kategori_kegiatan', $artikel->kategori_kegiatan) === 'Himpunan' ? 'selected' : '' }}>Himpunan</option>
+                <option value="Eksternal" {{ old('kategori_kegiatan', $artikel->kategori_kegiatan) === 'Eksternal' ? 'selected' : '' }}>Eksternal</option>
+            </select>
+        </div>        
+
+        <div>
             <label for="thumbnail" class="block text-sm font-medium text-gray-700">Thumbnail</label>
             @if ($artikel->thumbnail)
                 <div class="mt-2">

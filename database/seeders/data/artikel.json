@@ -2,101 +2,122 @@
     {
         "id": 1,
         "judul": "Testing artikel",
+        "kategori_kegiatan": "Himpunan",
         "konten": "Artikel Feature test",
         "slug": "testing-artikel",
         "tanggal_kegiatan": "2025-04-11T00:00:00.000000Z",
         "thumbnail": "artikel_images\/6XlZgH6J3QWJIx1YC0FEkd0vszOkZDn3JWmjRzgz.png",
         "created_at": "2025-04-11T10:58:13.000000Z",
-        "updated_at": "2025-04-11T10:58:13.000000Z"
+        "updated_at": "2025-05-06T13:06:13.000000Z"
     },
     {
         "id": 2,
         "judul": "Testing artikel after tailwind",
+        "kategori_kegiatan": "Himpunan",
         "konten": "testing tailwind migration",
         "slug": "testing-artikel-after-tailwind",
         "tanggal_kegiatan": "2025-04-29T00:00:00.000000Z",
         "thumbnail": "artikel_images\/oiI8JWUeDJdRmIQyYk1lIPRk1mv0ah20GQAhMmmu.png",
         "created_at": "2025-04-28T06:35:30.000000Z",
-        "updated_at": "2025-04-28T06:35:30.000000Z"
+        "updated_at": "2025-05-06T13:06:03.000000Z"
     },
     {
         "id": 3,
-        "judul": "Silaturahmi Keliarga Besar Informatika",
-        "konten": "Silaturahmi Keluarga Besar Informatika",
-        "slug": "silaturahmi-keliarga-besar-informatika",
+        "judul": "Silaturahmi Keluarga Besar Informatika",
+        "kategori_kegiatan": "Himpunan",
+        "konten": "Silaturahmi Keluarga Besar Informatika adalah kegiatan silaturahmi yang diselenggarakan HMIF guna mempererat silaturahmi antara mahasiswa, dosen hingga alumni dari jurusan Informatika Fakultas Teknik Universitas Tanjungpura.",
+        "slug": "silaturahmi-keluarga-besar-informatika",
         "tanggal_kegiatan": "2025-03-21T00:00:00.000000Z",
         "thumbnail": "artikel_images\/aBRekL4DEtDZ1AAyElWdhv5qbPFphDp2NMLNtUrA.jpg",
         "created_at": "2025-05-04T12:43:49.000000Z",
-        "updated_at": "2025-05-04T12:43:49.000000Z"
+        "updated_at": "2025-05-06T12:39:57.000000Z"
     },
     {
         "id": 4,
         "judul": "Testing 4",
+        "kategori_kegiatan": "Himpunan",
         "konten": "Lorem Ipsum",
         "slug": "testing-4",
         "tanggal_kegiatan": "2025-05-01T00:00:00.000000Z",
         "thumbnail": "artikel_images\/TsvyRAcE0w28t5uNgsvOnSGgNer6nzJzmSanbdBP.jpg",
         "created_at": "2025-05-04T12:44:37.000000Z",
-        "updated_at": "2025-05-04T12:44:37.000000Z"
+        "updated_at": "2025-05-06T13:06:21.000000Z"
     },
     {
         "id": 5,
         "judul": "Testing 5",
+        "kategori_kegiatan": "Himpunan",
         "konten": "Lorem Ipsum",
         "slug": "testing-5",
         "tanggal_kegiatan": "2025-05-02T00:00:00.000000Z",
         "thumbnail": "artikel_images\/5t0V3P0lz3JOyNlx2c4yxPCU522xlXauUhVF6ar4.jpg",
         "created_at": "2025-05-04T12:44:51.000000Z",
-        "updated_at": "2025-05-04T12:44:51.000000Z"
+        "updated_at": "2025-05-06T07:00:22.000000Z"
     },
     {
         "id": 6,
         "judul": "Testing 6",
+        "kategori_kegiatan": "Eksternal",
         "konten": "Lorem Ipsum",
         "slug": "testing-6",
         "tanggal_kegiatan": "2025-05-03T00:00:00.000000Z",
         "thumbnail": "artikel_images\/pgjTBkMvNKmPXupFgcKLYquTxwDM64dpZQdmiVIm.jpg",
         "created_at": "2025-05-04T12:45:12.000000Z",
-        "updated_at": "2025-05-04T12:45:12.000000Z"
+        "updated_at": "2025-05-06T07:00:31.000000Z"
     },
     {
         "id": 7,
         "judul": "Testing 7",
+        "kategori_kegiatan": "Fakultas",
         "konten": "Lorem Ipsum",
         "slug": "testing-7",
         "tanggal_kegiatan": "2025-05-04T00:00:00.000000Z",
         "thumbnail": "artikel_images\/7oU30qgVipWGwTSgUVKEUHixGqtkAUx0ETqgUb8Y.jpg",
         "created_at": "2025-05-04T12:45:26.000000Z",
-        "updated_at": "2025-05-04T12:45:26.000000Z"
+        "updated_at": "2025-05-06T07:00:38.000000Z"
     },
     {
         "id": 8,
         "judul": "Testing 8",
+        "kategori_kegiatan": "Himpunan",
         "konten": "Lorem Ipsum",
         "slug": "testing-8",
         "tanggal_kegiatan": "2025-05-05T00:00:00.000000Z",
         "thumbnail": "artikel_images\/U8Siat2RQ9omh7S3bBM2ekX0jWwjFQtMlcoavdxs.jpg",
         "created_at": "2025-05-04T12:45:42.000000Z",
-        "updated_at": "2025-05-04T12:45:42.000000Z"
+        "updated_at": "2025-05-06T07:00:44.000000Z"
     },
     {
         "id": 9,
         "judul": "Testing 9",
+        "kategori_kegiatan": "Himpunan",
         "konten": "Lorem Ipsum",
         "slug": "testing-9",
         "tanggal_kegiatan": "2025-05-06T00:00:00.000000Z",
         "thumbnail": "artikel_images\/gDnO6ojDQJUEzV1VgIewzwBATBfklzhKFqZhjbXq.jpg",
         "created_at": "2025-05-04T12:45:57.000000Z",
-        "updated_at": "2025-05-04T12:45:57.000000Z"
+        "updated_at": "2025-05-06T07:00:52.000000Z"
     },
     {
         "id": 10,
         "judul": "Testing 10",
+        "kategori_kegiatan": "Eksternal",
         "konten": "Lorem Ipsum",
         "slug": "testing-10",
         "tanggal_kegiatan": "2025-05-13T00:00:00.000000Z",
         "thumbnail": "artikel_images\/WXzzjSrot9JfC8RLNTz5jAGUepitOkYVY0oY0p0Y.jpg",
         "created_at": "2025-05-04T12:46:11.000000Z",
-        "updated_at": "2025-05-04T12:46:11.000000Z"
+        "updated_at": "2025-05-06T07:01:04.000000Z"
+    },
+    {
+        "id": 11,
+        "judul": "Test kategori",
+        "kategori_kegiatan": "Himpunan",
+        "konten": "Test kategori Artikel",
+        "slug": "test-kategori",
+        "tanggal_kegiatan": "2025-05-30T00:00:00.000000Z",
+        "thumbnail": "artikel_images\/OI7ReH5TSGkRtVA0qBnlIyd7A61RSTjJm2OGLI7w.png",
+        "created_at": "2025-05-06T06:55:27.000000Z",
+        "updated_at": "2025-05-06T06:58:57.000000Z"
     }
 ]

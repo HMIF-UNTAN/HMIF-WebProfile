@@ -18,7 +18,7 @@
                     @if ($page == $paginator->currentPage())
                         <span class="px-3 py-1 rounded bg-[#0f4696] text-white font-bold">{{ $page }}</span>
                     @else
-                        <a href="{{ $url }}" class="px-3 py-1 rounded bg-gray-200 text-[#0F4696] hover:bg-gray-300">{{ $page }}</a>
+                        <a href="{{ $url }}" class="px-3 py-1 rounded bg-gray-200 text-gray-500 hover:bg-gray-300">{{ $page }}</a>
                     @endif
                 @endforeach
             @endif

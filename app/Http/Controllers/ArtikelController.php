@@ -7,15 +7,49 @@ use App\Models\Artikel;
 use Illuminate\Container\Attributes\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class ArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('artikel');
+        $query = Artikel::query();
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('judul', 'like', '%' . $search . '%')
+                ->orWhere('konten', 'like', '%' . $search . '%');
+            });
+        }
+
+        if ($request->has('kategori')) {
+            $kategori = $request->kategori;
+            if (is_array($kategori)) {
+                $query->whereIn('kategori_kegiatan', $kategori);
+            }
+        }
+
+        if ($request->filled('status_kegiatan')) {
+            $today = Carbon::today();
+            if ($request->status_kegiatan == 'terlaksana') {
+                $query->whereDate('tanggal_kegiatan', '<', $today);
+            } elseif ($request->status_kegiatan == 'belum') {
+                $query->whereDate('tanggal_kegiatan', '>=', $today);
+            }
+        }
+
+        $artikels = $query->orderBy('tanggal_kegiatan', 'desc')->paginate(6)->withQueryString();
+        $daftarKategori = Artikel::select('kategori_kegiatan')->distinct()->orderBy('kategori_kegiatan')->pluck('kategori_kegiatan');
+        $artikelTerkini = Artikel::whereDate('tanggal_kegiatan', '<=', Carbon::today())
+        ->orderByDesc('tanggal_kegiatan')
+        ->limit(3)
+        ->get();
+
+        return view('artikel.index', compact('artikels', 'daftarKategori', 'artikelTerkini'));
     }
 
     public function indexDapur(Request $request)
@@ -32,6 +66,10 @@ class ArtikelController extends Controller
             } elseif ($request->status === 'past') {
                 $query->where('tanggal_kegiatan', '<=', now());
             }
+        }
+
+        if ($request->filled('kategori')) {
+            $query->where('kategori_kegiatan', $request->kategori);
         }
 
         if ($request->has('sort') && $request->sort === 'desc') {
@@ -60,12 +98,13 @@ class ArtikelController extends Controller
     }
 
     public function store(Request $request)
-    {
+{
     $request->validate([
         'judul' => 'required|string|max:255',
         'konten' => 'required',
         'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:35840',
-        'tanggal_kegiatan' => 'required|date'
+        'tanggal_kegiatan' => 'required|date',
+        'kategori_kegiatan' => 'required|in:Fakultas,Himpunan,Eksternal',
     ]);
 
     $gambarPath = null;
@@ -73,25 +112,27 @@ class ArtikelController extends Controller
         $gambarPath = $request->file('thumbnail')->store('artikel_images', 'public');
     }
 
-
     Artikel::create([
         'judul' => $request->judul,
         'konten' => $request->konten,
         'thumbnail' => $gambarPath,
         'tanggal_kegiatan' => $request->tanggal_kegiatan ?? now()->toDateString(),
+        'kategori_kegiatan' => $request->kategori_kegiatan,
     ]);
 
     Artikel::updateArtikelSeeder();
+
     return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil diunggah.');
 }
-
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug_id)
     {
-        //
+        $id = (int) Str::afterLast($slug_id, '-');
+        $artikel = Artikel::findOrFail($id);
+        return view('artikel.show', compact('artikel'));
     }
 
     /**
@@ -103,16 +144,14 @@ class ArtikelController extends Controller
         return view('dapur.artikel.edit',  compact('artikel'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $request->validate([
             'judul' => 'required|string|max:255',
             'konten' => 'required|string',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'tanggal_kegiatan' => 'required|date'
+            'tanggal_kegiatan' => 'required|date',
+            'kategori_kegiatan' => 'required|in:Fakultas,Himpunan,Eksternal'
         ]);
 
         $artikel = Artikel::findOrFail($id);
@@ -120,9 +159,10 @@ class ArtikelController extends Controller
         $artikel->konten = $request->konten;
         $artikel->slug = Str::slug($request->judul);
         $artikel->tanggal_kegiatan = $request->tanggal_kegiatan;
+        $artikel->kategori_kegiatan = $request->kategori_kegiatan;
 
         if ($request->hasFile('thumbnail')) {
-            // hapus gambar lama
+            // Hapus gambar lama jika ada
             if ($artikel->thumbnail) {
                 Storage::delete('public/' . $artikel->thumbnail);
             }
@@ -132,12 +172,11 @@ class ArtikelController extends Controller
             $artikel->thumbnail = $path;
         }
 
-        Artikel::updateArtikelSeeder();
         $artikel->save();
+        Artikel::updateArtikelSeeder();
 
         return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil diperbarui.');
     }
-
     /**
      * Remove the specified resource from storage.
      */
