@@ -33,7 +33,7 @@
         @php
             $judulDivisi = $divisi->judul;
 
-            if ($judulDivisi === 'Pengurus Inti') {
+            if ($judulDivisi === 'Pengurus Harian') {
                 $gabungan = collect();
                 $gabungan = $gabungan
                     ->merge($pengurusPerDivisiNama['Ketua Himpunan'] ?? collect())
@@ -43,7 +43,7 @@
                 $gabungan = $pengurusPerDivisiNama[$judulDivisi] ?? collect();
             }
 
-            if($judulDivisi === 'Pengurus Inti'){
+            if($judulDivisi === 'Pengurus Harian'){
                 $gabungan = collect([
                     $pengurusPerDivisiNama['Sekretaris']->first() ?? null,
                     $pengurusPerDivisiNama['Ketua Himpunan']->first() ?? null,

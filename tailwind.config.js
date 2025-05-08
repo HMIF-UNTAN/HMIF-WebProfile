@@ -31,7 +31,7 @@ export default {
                     '100%': { opacity: '1', transform: 'translateX(0)' },
                 },
                 fadeInTop: {
-                    '0%': { opacity: '0', transform: 'translateY(-50px)' },
+                    '0%': { opacity: '0', transform: 'translateY(-100px)' },
                     '100%': { opacity: '1', transform: 'translateY(0)' },
                 },
                 fadeInBottom: {

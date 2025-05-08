@@ -30,7 +30,7 @@
         </svg>
     </div>
 </div>
-<div class="bg-white py-5 py-5">
+<div class="bg-gradient-to-b from-white to-[#E0EDFF] py-5">
     <div class="container mx-auto px-4 text-center py-12">
         <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-8 opacity-0 transform transition-opacity duration-700 will-change-transform" data-animate="fade-in-top">
             Profil Video HMIF FT UNTAN
@@ -47,12 +47,7 @@
         </div>
     </div>       
 </div>
-<section class="bg-[#0F4696]">
-    <div class="container p-3">
-        <p>&nbsp;</p>
-    </div>
-</section>
-<div class="bg-white text-gray-800 py-10">
+<div class="bg-[#E0EDFF] text-gray-800 py-10">
   <div class="max-w-6xl mx-auto px-6 flex flex-col gap-10 items-start">
     <!-- Full width: Tentang Kami -->
     <div class="w-full">
@@ -100,12 +95,7 @@
     </div>
   </div>  
 </div>  
-<section class="bg-[#0F4696]">
-    <div class="container p-3">
-        <p>&nbsp;</p>
-    </div>
-</section>
-<div class="swiper swiper-galeri w-full max-w-full overflow-visible my-10 text-center bg-white">
+<div class="swiper swiper-galeri w-full max-w-full overflow-visible pt-[200px] text-center bg-gradient-to-b from-[#E0EDFF] to-white">
   <h2 class="text-3xl md:text-4xl font-bold text-[#0F4696] mb-3 opacity-0 transform transition-opacity duration-700 will-change-transform"
       data-animate="fade-in-top">
       Galeri HMIF

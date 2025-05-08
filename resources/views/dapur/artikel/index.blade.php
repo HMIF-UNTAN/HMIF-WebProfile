@@ -4,7 +4,7 @@
 <div class="p-5">
     <h2 class="text-2xl font-bold mb-6">Daftar Artikel</h2>
 
-    <form method="GET" action="{{ route('dapurartikel') }}" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+    <form method="GET" action="{{ route('dapurartikel') }}" class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
         <input 
             type="text" 
             name="search" 
@@ -12,11 +12,18 @@
             placeholder="Cari judul..." 
             value="{{ request('search') }}"
         >
-        
+    
         <select name="status" class="border rounded-lg p-2 w-full">
             <option value="">Semua Kegiatan</option>
             <option value="upcoming" {{ request('status') === 'upcoming' ? 'selected' : '' }}>Akan Datang</option>
             <option value="past" {{ request('status') === 'past' ? 'selected' : '' }}>Sudah Terlaksana</option>
+        </select>
+    
+        <select name="kategori" class="border rounded-lg p-2 w-full">
+            <option value="">Semua Kategori</option>
+            <option value="Fakultas" {{ request('kategori') === 'Fakultas' ? 'selected' : '' }}>Fakultas</option>
+            <option value="Himpunan" {{ request('kategori') === 'Himpunan' ? 'selected' : '' }}>Himpunan</option>
+            <option value="Eksternal" {{ request('kategori') === 'Eksternal' ? 'selected' : '' }}>Eksternal</option>
         </select>
     
         <select name="sort" class="border rounded-lg p-2 w-full">
@@ -27,7 +34,7 @@
         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
             Filter
         </button>
-    </form>
+    </form>    
 
     <div class="overflow-x-auto rounded-lg shadow">
         <table class="min-w-full bg-white">

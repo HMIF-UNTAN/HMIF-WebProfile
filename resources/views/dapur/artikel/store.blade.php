@@ -28,6 +28,16 @@
         </div>
 
         <div>
+            <label for="kategori_kegiatan" class="block text-sm font-medium text-gray-700">Kategori Kegiatan</label>
+            <select name="kategori_kegiatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+                <option value="">-- Pilih Kategori --</option>
+                <option value="Fakultas">Fakultas</option>
+                <option value="Himpunan">Himpunan</option>
+                <option value="Eksternal">Eksternal</option>
+            </select>
+        </div>        
+
+        <div>
             <label for="thumbnail" class="block text-sm font-medium text-gray-700">Gambar</label>
             <input type="file" name="thumbnail" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
                 file:rounded-md file:border-0
