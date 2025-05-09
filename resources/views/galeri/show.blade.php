@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative text-white py-20 min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
+<div class="relative text-white min-h-[90vh] md:min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
     <!-- Overlay -->
     <div class="absolute inset-0" style="background-color: rgba(15, 70, 150, 0.6); z-index: 0;"></div>
 
     <!-- Wrapper -->
-    <div class="relative z-10 container py-12">
-        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16 px-4">
+    <div class="relative z-10 container mx-auto px-4 py-12 md:py-0 h-full">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16 md:min-h-screen">
             <!-- Text Section -->
             <div class="md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-center md:items-start text-center md:text-left mt-6 md:mt-0">
                 <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-shadow-lg">
