@@ -1,24 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative text-white py-20 min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
+<div class="relative text-white min-h-[90vh] md:min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
     <div class="absolute inset-0" style="background-color: rgba(15, 70, 150, 0.6); z-index: 0;"></div>
 
-    <div class="relative z-10 container py-12">
-        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16 px-4">
-            <div class="w-full md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-center md:items-start text-center md:text-left">
+    <div class="relative z-10 container mx-auto px-4 py-8 md:py-0 h-full">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto h-full min-h-[60vh] md:min-h-screen">
+            <!-- Text Section -->
+            <div class="md:w-1/2 animate-fade-in-left gap-3 flex flex-col items-center md:items-start text-center md:text-left mt-1 md:mt-10">
                 <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-shadow-lg">
                     Artikel HMIF
                 </h1>
-                <p class="text-lg mb-4 text-shadow-lg">
+                <p class="text-lg text-shadow-lg">
                     Kegiatan-kegiatan HMIF yang sudah maupun akan terlaksana.
                 </p>
             </div>
-            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right mb-6 md:mb-0">
-                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="w-2/3 md:w-full max-w-xs md:max-w-sm">
+
+            <!-- Logo Section -->
+            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right mb-1 md:mb-0">
+                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF"
+                    class="w-2/3 md:w-full max-w-xs md:max-w-sm">
             </div>
-        </div>        
+        </div>
     </div>
+
 
     <div class="custom-shape-divider-bottom-1745286436">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -27,7 +32,7 @@
     </div>
 </div>
 <div class="container mx-auto px-[8%] py-10">
-    <div class="flex flex-col lg:flex-row gap-8">
+    <div class="flex flex-col-reverse lg:flex-row gap-8">
         {{-- Kolom Kiri: Artikel --}}
         <div class="w-full lg:w-2/3">
             @if($artikels->isEmpty())
@@ -155,7 +160,7 @@
             </form>
 
             {{-- Artikel Terkini --}}
-            <div>
+            <div class="hidden lg:block">
                 <h4 class="text-lg font-semibold mb-3">Artikel Terkini</h4>
                 <div class="space-y-3">
                     @foreach($artikelTerkini as $recent)

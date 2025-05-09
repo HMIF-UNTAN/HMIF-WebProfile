@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative text-white py-20 min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
+<div class="relative text-white min-h-[90vh] md:min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
     <div class="absolute inset-0 bg-[#0F469699] z-0"></div>
 
-    <div class="relative z-10 container px-4 sm:px-6 md:px-8 py-12">
+    <div class="relative z-10 container mx-auto px-4 py-12 md:py-0 h-full">
         <!-- Bagian utama, teks dan logo -->
-        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto h-full min-h-[60vh] md:min-h-screen">
 
             <!-- Bagian teks -->
             <div class="md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-center md:items-start text-center md:text-left">
