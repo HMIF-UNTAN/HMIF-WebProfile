@@ -28,7 +28,7 @@
   <!-- Mobile Menu (dropdown with transition) -->
   <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-[#E0EDFF] bg-opacity-90 text-[#0F4696] px-4 py-0">
     <a href="{{ route('home') }}" class="block py-2">Home</a>
-    <a href="{{ route('pengurus.index') }}" class="block py-2">Tentang Kami</a>
+    <a href="{{ route('pengurus.index') }}" class="block py-2">Pengurus</a>
     <a href="{{ route('galeri.index') }}" class="block py-2">Galeri</a>
     <a href="{{ route('artikel.index') }}" class="block py-2">Artikel</a>
     <a href="#kontak" class="block py-2">Ikatan Alumni</a>

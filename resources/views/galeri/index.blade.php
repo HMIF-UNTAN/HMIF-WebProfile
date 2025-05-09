@@ -1,27 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative text-white py-20 min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
-    <div class="absolute inset-0" style="background-color: rgba(15, 70, 150, 0.6); z-index: 0;"></div>
+<div class="relative text-white min-h-[90vh] md:min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-[rgba(15,70,150,0.6)] z-0"></div>
 
-    <div class="relative z-10 container py-12">
-        <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16 px-0">
-            <div class="md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-start">
-                <h1 class="text-white text-4xl md:text-4xl font-bold text-shadow-lg">
+    <!-- Wrapper -->
+    <div class="relative z-10 container mx-auto px-4 py-12 md:py-20 lg:py-[150px]">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16">
+            <!-- Text Section -->
+            <div class="md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-center md:items-start text-center md:text-left mt-6 md:mt-10">
+                <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-shadow-lg">
                     Album HMIF
                 </h1>
                 <p class="text-lg mb-4 text-shadow-lg">
                     Dokumentasi kegiatan HMIF yang telah terlaksana.
                 </p>
             </div>
-            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right">
-                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="max-w-xs md:max-w-sm">
+            
+            <!-- Logo Section -->
+            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right mb-6 md:mb-0">
+                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="w-2/3 md:w-full max-w-xs md:max-w-sm">
             </div>
         </div>        
     </div>
 
+    <!-- Shape Divider -->
     <div class="custom-shape-divider-bottom-1745286436">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <svg class="w-full h-20 md:h-28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
         </svg>
     </div>

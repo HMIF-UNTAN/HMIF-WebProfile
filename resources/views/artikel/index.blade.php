@@ -5,17 +5,17 @@
     <div class="absolute inset-0" style="background-color: rgba(15, 70, 150, 0.6); z-index: 0;"></div>
 
     <div class="relative z-10 container py-12">
-        <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16 px-0">
-            <div class="md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-start">
-                <h1 class="text-white text-4xl md:text-4xl font-bold text-shadow-lg">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between max-w-6xl mx-auto space-y-10 md:space-y-0 md:gap-x-16 px-4">
+            <div class="w-full md:w-1/2 animate-fade-in-left gap-4 flex flex-col items-center md:items-start text-center md:text-left">
+                <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-shadow-lg">
                     Artikel HMIF
                 </h1>
                 <p class="text-lg mb-4 text-shadow-lg">
                     Kegiatan-kegiatan HMIF yang sudah maupun akan terlaksana.
                 </p>
             </div>
-            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right">
-                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="max-w-xs md:max-w-sm">
+            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right mb-6 md:mb-0">
+                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="w-2/3 md:w-full max-w-xs md:max-w-sm">
             </div>
         </div>        
     </div>
