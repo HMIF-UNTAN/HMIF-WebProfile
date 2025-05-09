@@ -16,8 +16,8 @@
             </div>
 
             <!-- Bagian logo -->
-            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right">
-                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="w-36 sm:w-48 md:w-64">
+            <div class="md:w-1/2 flex justify-center md:justify-end animate-fade-in-right mb-6 md:mb-0">
+                <img src="{{ asset('storage/LogoHMIFmidWhite.png') }}" alt="Logo HMIF" class="w-2/3 md:w-full max-w-xs md:max-w-sm">
             </div>
         </div>        
     </div>
