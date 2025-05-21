@@ -197,3 +197,22 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll);
   startScrambleIfVisible();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById('successPopup');
+  if (popup) {
+    // Tampilkan popup dengan animasi masuk
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+  }
+
+  // Fungsi untuk menutup popup
+  window.closePopup = function () {
+    if (popup) {
+      popup.classList.add('opacity-0');
+      setTimeout(() => {
+        popup.remove();
+      }, 300); // tunggu animasi selesai baru hapus dari DOM
+    }
+  };
+});
