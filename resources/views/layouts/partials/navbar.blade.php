@@ -21,7 +21,7 @@
       <a href="{{ route('pengurus.index') }}" class="text-white scroll-text hover:text-blue-300 transition {{ Route::is('pengurus.index') ? 'font-bold' : '' }}">Pengurus</a>
       <a href="{{ route('galeri.index') }}" class="text-white scroll-text hover:text-blue-300 transition {{ Request::is('galeri*') ? 'font-bold' : '' }}">Galeri</a>
       <a href="{{ route('artikel.index') }}" class="text-white scroll-text hover:text-blue-300 transition {{ Request::is('artikel*') ? 'font-bold' : '' }}">Artikel</a>
-      <a href="#kontak" class="text-white scroll-text hover:text-blue-300 transition">Ikatan Alumni</a>
+      <a href="{{ route('alumni.index') }}" class="text-white scroll-text hover:text-blue-300 transition {{ Request::is('alumni*') ? 'font-bold' : '' }}">Ikatan Alumni</a>
     </div>
   </div>
 
@@ -31,6 +31,6 @@
     <a href="{{ route('pengurus.index') }}" class="block py-2">Pengurus</a>
     <a href="{{ route('galeri.index') }}" class="block py-2">Galeri</a>
     <a href="{{ route('artikel.index') }}" class="block py-2">Artikel</a>
-    <a href="#kontak" class="block py-2">Ikatan Alumni</a>
+    <a href="{{ route('alumni.index') }}" class="block py-2">Ikatan Alumni</a>
   </div>
 </nav>

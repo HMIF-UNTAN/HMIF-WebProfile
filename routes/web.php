@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminManagementController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -33,6 +34,7 @@ Route::prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(fun
     Route::get('/galeri', [GaleriController::class, 'indexDapur'])->name('dapurgaleri');
     Route::get('/pengurus', [KepengurusanController::class, 'indexDapur'])->name('dapurpengurus');
     Route::get('/kontak', [KontakController::class, 'indexDapur'])->name('dapurkontak');
+    Route::get('/alumni', [AlumniController::class, 'indexDapur'])->name('dapuralumni');
 });
 
 Route::controller(ArtikelController::class)->group(function () {
@@ -82,6 +84,16 @@ Route::controller(KepengurusanController::class)->prefix('dapur/pengurus')->midd
     Route::get('/edit/{id}', 'edit')->name('pengurus.edit');
     Route::put('/{id}', 'update')->name('pengurus.update');
     Route::delete('/{id}', 'destroy')->name('pengurus.destroy');
+});
+
+Route::controller(AlumniController::class)->group(function () {
+    Route::get('/alumni', 'index')->name('alumni.index');
+    Route::get('/alumni/daftar', 'form')->name('alumni.daftar');
+    Route::post('/alumni/daftar', 'store')->name('alumni.store');
+});
+
+Route::controller(AlumniController::class)->prefix('dapur/alumni')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
+     Route::put('/alumni/{id}/verifikasi', [AlumniController::class, 'verifikasi'])->name('dapur.alumni.verifikasi');
 });
 
 Route::controller(KontakController::class)->prefix('dapur/kontak')->middleware(['auth', 'role:admin|superadmin'])->group(function () {
