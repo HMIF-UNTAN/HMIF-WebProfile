@@ -1,7 +1,7 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
 @section('content')
-<div class="relative text-white min-h-[90vh] md:min-h-screen bg-cover bg-center" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
+<div class="relative text-white min-h-[90vh] md:min-h-screen bg-cover bg-center mb-20" style="background-image: url('{{ asset('storage/mainBG.JPG') }}');">
     <div class="absolute inset-0" style="background-color: rgba(15, 70, 150, 0.6); z-index: 0;"></div>
 
     <div class="relative z-10 container mx-auto px-4 py-8 md:py-0 h-full">
@@ -33,108 +33,171 @@
         </svg>
     </div>
 </div>
+
 <!-- Form Section -->
-<div class="container mx-auto max-w-3xl px-4 sm:px-6 py-10 bg-white shadow-lg rounded-2xl border border-[#E8D7CC] my-10">
-    <h2 class="text-2xl sm:text-3xl font-bold text-[#0C0221] mb-6 text-center">Form Pendaftaran Alumni</h2>
+<div class="container mx-auto max-w-3xl px-6 py-12 bg-white shadow-xl rounded-3xl border border-[#E8D7CC] mt-[-3rem] z-20 relative">
+    <h2 class="text-3xl font-bold text-[#0C0221] mb-8 text-center">Form Pendaftaran Alumni</h2>
 
     @if(session('success'))
         <div id="successPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50 px-4">
             <div class="bg-white rounded-xl shadow-xl p-6 max-w-sm w-full text-center animate-fade-in-top">
-                <h3 class="text-lg sm:text-xl font-bold text-[#0C0221] mb-4 leading-relaxed">
-                    Pendaftaran Berhasil!<br>
-                    Terima kasih telah mendaftar sebagai alumni Informatika FT Untan.<br>
-                    Data kakak/abang akan diverifikasi oleh admin.<br>
-                    Silakan tunggu konfirmasi melalui email yang didaftarkan.
-                </h3>
-                <p class="text-gray-700 text-sm">{{ session('success') }}</p>
-                <button onclick="closePopup()" class="mt-4 px-4 py-2 bg-[#0F4696] text-white rounded-md hover:bg-[#0c3a7a] transition">
-                    Tutup
-                </button>
+                <h3 class="text-lg sm:text-xl font-bold text-[#0C0221] mb-4">Pendaftaran Berhasil!</h3>
+                <p class="text-gray-700 text-sm leading-relaxed">Data Anda akan diverifikasi oleh admin. Silakan tunggu konfirmasi melalui email.</p>
+                <button onclick="closePopup()" class="mt-4 px-4 py-2 bg-[#0F4696] text-white rounded-md hover:bg-[#0c3a7a] transition">Tutup</button>
             </div>
         </div>
     @endif
+
     @if ($errors->any())
         <div class="mb-6 p-4 rounded-xl bg-red-100 border border-red-400 text-red-800">
             <strong>Oops! Ada beberapa masalah:</strong>
-            <ul class="mt-2 list-disc list-inside">
+            <ul class="mt-2 list-disc list-inside space-y-1">
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
     @endif
-    <form action="{{ route('alumni.store') }}" method="POST" class="space-y-5">
+
+    @php
+        $label = 'block text-sm font-semibold text-[#0C0221]';
+        $input = 'mt-1 block w-full border border-[#E8D7CC] rounded-xl p-3 shadow-sm bg-[#FAFAFA] focus:ring-[#0F4696] focus:border-[#0F4696] text-sm sm:text-base text-[#1E1E1E]';
+    @endphp
+
+    <form action="{{ route('alumni.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
 
-        @php
-            $labelStyle = 'block text-sm font-semibold text-[#0C0221]';
-            $inputStyle = 'mt-1 block w-full border border-[#E8D7CC] rounded-xl shadow-sm p-3 focus:ring-[#0F4696] focus:border-[#0F4696] bg-[#FAFAFA] text-[#1E1E1E] text-sm sm:text-base';
-        @endphp
+        <h3 class="text-lg font-bold text-[#0C0221] mt-8">A. Data Pribadi</h3>
 
         <div>
-            <label for="nama_lengkap" class="{{ $labelStyle }}">Nama Lengkap</label>
-            <input type="text" name="nama_lengkap" id="nama_lengkap" class="{{ $inputStyle }}" value="{{ old('nama_lengkap') }}" required>
+            <label class="{{ $label }}">Nama Lengkap</label>
+            <input type="text" name="nama_lengkap" class="{{ $input }}" value="{{ old('nama_lengkap') }}" required>
         </div>
 
         <div>
-            <label for="nim" class="{{ $labelStyle }}">NIM</label>
-            <input type="text" name="nim" id="nim" class="{{ $inputStyle }}" value="{{ old('nim') }}" required>
+            <label class="{{ $label }}">Nama Panggilan</label>
+            <input type="text" name="nama_panggilan" class="{{ $input }}" value="{{ old('nama_panggilan') }}">
         </div>
 
         <div>
-            <label for="angkatan" class="{{ $labelStyle }}">Angkatan</label>
-            <input type="number" name="angkatan" id="angkatan" class="{{ $inputStyle }}" value="{{ old('angkatan') }}" required>
+            <label class="{{ $label }}">Jenis Kelamin</label>
+            <select name="jenis_kelamin" class="{{ $input }}" required>
+                <option value="" disabled selected>Pilih jenis kelamin</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+            </select>
         </div>
 
         <div>
-            <label for="email" class="{{ $labelStyle }}">Email Aktif</label>
-            <input type="email" name="email" id="email" class="{{ $inputStyle }}" value="{{ old('email') }}" required>
+            <label class="{{ $label }}">No. HP</label>
+            <input type="text" name="no_hp" class="{{ $input }}" value="{{ old('no_hp') }}" required>
         </div>
 
         <div>
-            <label for="no_hp" class="{{ $labelStyle }}">No. HP / WhatsApp</label>
-            <input type="text" name="no_hp" id="no_hp" class="{{ $inputStyle }}" value="{{ old('no_hp') }}" required>
+            <label class="{{ $label }}">Email</label>
+            <input type="email" name="email" class="{{ $input }}" value="{{ old('email') }}" required>
         </div>
 
         <div>
-            <label for="pekerjaan" class="{{ $labelStyle }}">Pekerjaan <span class="text-gray-400">(Opsional)</span></label>
-            <input type="text" name="pekerjaan" id="pekerjaan" class="{{ $inputStyle }}" value="{{ old('pekerjaan') }}">
+            <label class="{{ $label }}">Website Pribadi</label>
+            <input type="url" name="website_pribadi" class="{{ $input }}" value="{{ old('website_pribadi') }}">
+        </div>
+
+        <h3 class="text-lg font-bold text-[#0C0221] mt-10">B. Data Akademik</h3>
+
+        <div>
+            <label class="{{ $label }}">NIM</label>
+            <input type="text" name="nim" class="{{ $input }}" value="{{ old('nim') }}" required>
         </div>
 
         <div>
-            <label for="instansi" class="{{ $labelStyle }}">Instansi / Tempat Kerja <span class="text-gray-400">(Opsional)</span></label>
-            <input type="text" name="instansi" id="instansi" class="{{ $inputStyle }}" value="{{ old('instansi') }}">
+            <label class="{{ $label }}">Angkatan</label>
+            <input type="number" name="angkatan" class="{{ $input }}" value="{{ old('angkatan') }}" required>
         </div>
 
         <div>
-            <label for="alamat_domisili" class="{{ $labelStyle }}">Alamat Domisili <span class="text-gray-400">(Opsional)</span></label>
-            <textarea name="alamat_domisili" id="alamat_domisili" rows="3" class="{{ $inputStyle }}">{{ old('alamat_domisili') }}</textarea>
+            <label class="{{ $label }}">Judul Tugas Akhir</label>
+            <input type="text" name="judul_tugas_akhir" class="{{ $input }}" value="{{ old('judul_tugas_akhir') }}">
+        </div>
+
+        <h3 class="text-lg font-bold text-[#0C0221] mt-10">C. Pekerjaan</h3>
+
+        <div>
+            <label class="{{ $label }}">Pekerjaan</label>
+            <input type="text" name="pekerjaan" class="{{ $input }}" value="{{ old('pekerjaan') }}">
+        </div>
+
+        <div>
+            <label class="{{ $label }}">Nama Perusahaan</label>
+            <input type="text" name="nama_perusahaan" class="{{ $input }}" value="{{ old('nama_perusahaan') }}">
+        </div>
+
+        <div>
+            <label class="{{ $label }}">Website Perusahaan</label>
+            <input type="url" name="website_perusahaan" class="{{ $input }}" value="{{ old('website_perusahaan') }}">
+        </div>
+
+        <h3 class="text-lg font-bold text-[#0C0221] mt-10">D. Lain-lain</h3>
+
+        <div>
+            <label class="{{ $label }}">Facebook</label>
+            <input type="url" name="facebook" class="{{ $input }}" value="{{ old('facebook') }}">
+        </div>
+
+        <div>
+            <label class="{{ $label }}">LinkedIn</label>
+            <input type="url" name="linkedin" class="{{ $input }}" value="{{ old('linkedin') }}">
+        </div>
+
+        <div>
+            <label class="{{ $label }}">Instagram</label>
+            <input type="url" name="instagram" class="{{ $input }}" value="{{ old('instagram') }}">
+        </div>
+
+        <div>
+            <label class="{{ $label }}">Twitter</label>
+            <input type="url" name="twitter" class="{{ $input }}" value="{{ old('twitter') }}">
+        </div>
+
+        <div>
+            <label class="{{ $label }}">Minat / Motto</label>
+            <textarea name="minat_motto" rows="3" class="{{ $input }}">{{ old('minat_motto') }}</textarea>
+        </div>
+
+        <div>
+            <label class="{{ $label }}">Upload Foto</label>
+            <input type="file" name="foto" class="{{ $input }}">
         </div>
 
         <div>
             <button type="submit"
                 class="w-full bg-[#0F4696] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#0c3a7a] transition duration-300 text-sm sm:text-base">
-                Daftar
+                Kirim Pendaftaran
             </button>
         </div>
     </form>
 </div>
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    // Restore scroll position if available in sessionStorage
-    const scrollY = sessionStorage.getItem('scrollPosition');
-    if (scrollY !== null) {
-        window.scrollTo(0, parseInt(scrollY));
-        sessionStorage.removeItem('scrollPosition');
-    }
+        const scrollY = sessionStorage.getItem('scrollPosition');
+        if (scrollY !== null) {
+            window.scrollTo(0, parseInt(scrollY));
+            sessionStorage.removeItem('scrollPosition');
+        }
 
-    // Saat submit form, simpan posisi scroll
-    const form = document.querySelector('form[action="{{ route('alumni.store') }}"]');
-    if (form) {
-        form.addEventListener('submit', function () {
-        sessionStorage.setItem('scrollPosition', window.scrollY);
-        });
-    }
+        const form = document.querySelector('form[action="{{ route('alumni.store') }}"]');
+        if (form) {
+            form.addEventListener('submit', function () {
+                sessionStorage.setItem('scrollPosition', window.scrollY);
+            });
+        }
     });
+
+    function closePopup() {
+        const popup = document.getElementById('successPopup');
+        if (popup) popup.remove();
+    }
 </script>
 @endsection
