@@ -30,7 +30,7 @@
     </div>
 </div>
 <div class="container mx-auto max-w-6xl p-6 my-10 bg-white shadow-lg rounded-2xl border border-[#E8D7CC]">
-    <h2 class="text-3xl font-bold text-[#0C0221] mb-6 text-center">Daftar Alumni Informatika</h2>
+    <h2 class="text-3xl font-bold text-[#0C0221] mb-6 text-center">Daftar Alumni Informatika FT Untan</h2>
 
     <!-- Tombol Tab Angkatan -->
     <div class="flex flex-wrap justify-center gap-3">
@@ -51,32 +51,51 @@
             <table class="min-w-full text-sm text-left border border-[#E8D7CC] rounded-xl overflow-hidden">
                 <thead class="bg-[#0F4696] text-white">
                     <tr>
-                        <th class="px-4 py-3">No</th>
+                        <th class="px-4 py-3">Foto</th>
                         <th class="px-4 py-3">Nama Lengkap</th>
-                        <th class="px-4 py-3">NIM</th>
-                        <th class="px-4 py-3">Email</th>
-                        <th class="px-4 py-3">No HP</th>
+                        <th class="px-4 py-3">Tugas Akhir</th>
                         <th class="px-4 py-3">Pekerjaan</th>
                         <th class="px-4 py-3">Instansi</th>
+                        <th class="px-4 py-3">Social Media</th>
+                        <th class="px-4 py-3">Motto</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white text-[#1E1E1E] divide-y divide-[#E8D7CC]">
-                    @foreach ($alumnis as $index => $alumni)
-                        <tr>
-                            <td class="px-4 py-3">{{ $index + 1 }}</td>
-                            <td class="px-4 py-3">{{ $alumni->nama_lengkap }}</td>
-                            <td class="px-4 py-3">{{ $alumni->nim }}</td>
-                            <td class="px-4 py-3">{{ $alumni->email }}</td>
-                            <td class="px-4 py-3">{{ $alumni->no_hp }}</td>
+                    @foreach ($alumnis as $alumni)
+                        <tr class="align-top">
+                            <td class="px-4 py-3">
+                                <img src="{{ Storage::url($alumni->foto) ?? asset('images/default-avatar.png') }}" alt="Foto Alumni" class="w-14 h-14 object-cover rounded-full border border-[#E8D7CC]">
+                            </td>
+                            <td class="px-4 py-3 font-semibold">{{ $alumni->nama_lengkap }}</td>
+                            <td class="px-4 py-3">{{ $alumni->tugas_akhir ?? '-' }}</td>
                             <td class="px-4 py-3">{{ $alumni->pekerjaan ?? '-' }}</td>
                             <td class="px-4 py-3">{{ $alumni->instansi ?? '-' }}</td>
+                            <td class="px-4 py-3 space-x-2">
+                                @if ($alumni->instagram)
+                                    <a href="{{ $alumni->instagram }}" target="_blank" title="Instagram">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                @endif
+                                @if ($alumni->linkedin)
+                                    <a href="{{ $alumni->linkedin }}" target="_blank" title="LinkedIn">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                @endif
+                                @if ($alumni->twitter)
+                                    <a href="{{ $alumni->twitter }}" target="_blank" title="Twitter">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                @endif
+                            </td>
+                            <td class="px-4 py-3 italic">"{{ $alumni->motto ?? '-' }}"</td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     @endforeach
-        <!-- Tombol Daftar Sebagai Alumni -->
+
+    <!-- Tombol Daftar Alumni -->
     <div class="mt-10 flex justify-center">
         <a href="{{ route('alumni.daftar') }}" class="inline-flex items-center px-6 py-3 bg-[#0F4696] text-white font-semibold rounded-xl shadow-md hover:bg-[#0C3C82] transition duration-300 ease-in-out">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -85,10 +104,9 @@
             Daftar Sebagai Alumni
         </a>
     </div>
-
 </div>
 
-<!-- Script untuk tab -->
+<!-- Script Tab -->
 <script>
     function showTab(angkatan, button) {
         document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
