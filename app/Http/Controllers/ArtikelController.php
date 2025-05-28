@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artikel;
-use Illuminate\Container\Attributes\Storage;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
@@ -145,38 +145,30 @@ class ArtikelController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'judul' => 'required|string|max:255',
-            'konten' => 'required|string',
-            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'tanggal_kegiatan' => 'required|date',
-            'kategori_kegiatan' => 'required|in:Fakultas,Himpunan,Eksternal'
-        ]);
+{
+    $artikel = Artikel::find($id);
 
-        $artikel = Artikel::findOrFail($id);
-        $artikel->judul = $request->judul;
-        $artikel->konten = $request->konten;
-        $artikel->slug = Str::slug($request->judul);
-        $artikel->tanggal_kegiatan = $request->tanggal_kegiatan;
-        $artikel->kategori_kegiatan = $request->kategori_kegiatan;
-
-        if ($request->hasFile('thumbnail')) {
-            // Hapus gambar lama jika ada
-            if ($artikel->thumbnail) {
-                Storage::delete('public/' . $artikel->thumbnail);
-            }
-
-            $file = $request->file('thumbnail');
-            $path = $file->store('artikel_images', 'public');
-            $artikel->thumbnail = $path;
-        }
-
-        $artikel->save();
-        Artikel::updateArtikelSeeder();
-
-        return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil diperbarui.');
+    if (!$artikel) {
+        return back()->with('error', 'Artikel tidak ditemukan.');
     }
+
+    \Log::info('Request:', $request->all());
+
+    $artikel->judul = $request->judul;
+    $artikel->konten = $request->konten;
+    $artikel->tanggal_kegiatan = $request->tanggal_kegiatan;
+    $artikel->kategori_kegiatan = $request->kategori_kegiatan;
+
+    if ($request->hasFile('thumbnail')) {
+        $path = $request->file('thumbnail')->store('thumbnails', 'public');
+        $artikel->thumbnail = $path;
+    }
+
+    $artikel->save();
+    Artikel::updateArtikelSeeder();
+    return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil diperbarui.');
+}
+
     /**
      * Remove the specified resource from storage.
      */

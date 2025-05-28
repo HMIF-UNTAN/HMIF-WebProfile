@@ -45,9 +45,9 @@ Route::controller(ArtikelController::class)->group(function () {
 Route::controller(ArtikelController::class)->prefix('dapur')->middleware(['auth', 'role:admin|superadmin'])->group(Function(){
     Route::get('/artikel/tambah', 'tambahArtikel')->name('tambahArtikel');
     Route::post('/artikel', 'store')->name('artikel.store'); 
-    Route::get('/artikel/{slug}/edit', 'edit')->name('artikel.edit');
-    Route::put('/artikel/{slug}', 'update')->name('artikel.update');
-    Route::delete('/artikel/{slug}', 'destroy')->name('artikel.destroy');
+    Route::get('/artikel/{id}/edit', 'edit')->name('artikel.edit');
+    Route::put('/artikel/{id}', 'update')->name('artikel.update');
+    Route::delete('/artikel/{id}', 'destroy')->name('artikel.destroy');
 });
 
 Route::controller(TentangKamiController::class)->prefix('dapur/tentang-kami')->middleware(['auth', 'role:admin|superadmin'])->group(function () {

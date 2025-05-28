@@ -13,7 +13,7 @@ class Artikel extends Model
 
     protected $table = 'artikels';
     protected $guarded = [];
-    protected $fillable = ['judul', 'konten', 'slug', 'thumbnail', 'tanggal_kegiatan', 'kategori_kegiatan'];
+    protected $fillable = ['judul', 'konten', 'slug', 'thumbnail', 'tanggal_kegiatan', 'kategori_kegiatan', 'thumnail'];
 
     protected static function booted()
     {
@@ -26,7 +26,7 @@ class Artikel extends Model
         });
 
         static::deleting(function ($artikel) {
-            if ($atikel->foto && Storage::disk('public')->exists($artikel->foto)) {
+            if ($artikel->foto && Storage::disk('public')->exists($artikel->foto)) {
                 Storage::disk('public')->delete($artikel->foto);
             }
         });
