@@ -132,6 +132,6 @@ class KepengurusanController extends Controller
 
         Pengurus::updatePengurusSeeder();
 
-        return redirect()->route('dapurartikel')->with('success', 'Artikel berhasil dihapus.');
+        return redirect()->route('dapurpengurus')->with('success', 'Artikel berhasil dihapus.');
     }
 }

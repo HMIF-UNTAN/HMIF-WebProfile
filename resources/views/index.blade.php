@@ -118,7 +118,7 @@
               <a href="{{ route('galeri.show', $album->id) }}" class="block w-full h-full">
                 <div class="relative w-full h-[450px] bg-white shadow-lg rounded-2xl overflow-hidden">
                   <div class="absolute inset-0">
-                    <img src="{{ Storage::url($album->thumbnail) }}" alt="{{ $album->nama_album }}" class="w-full h-full object-cover" />
+                    <img src="{{ Storage::url($album->thumbnail) }}" alt="{{ $album->nama_album }}" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
       
                   {{-- Gradient Overlay --}}
