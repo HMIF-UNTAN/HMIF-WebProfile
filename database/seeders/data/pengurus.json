@@ -958,5 +958,17 @@
             "jabatan": "Inti",
             "periode": "2025"
         }
+    },
+    {
+        "nama": "Bintang Galih Pambudi Despriyambodo",
+        "nim": "D1041221027",
+        "email": "D1041221027@student.untan.ac.id",
+        "jenis_jabatan": "Anggota",
+        "foto": "foto_pengurus/Zk0iJPlVYEbYAKpdbOuRd2GkDDXhVrhsr0203gop.jpg",
+        "kepengurusan": {
+            "divisi_id": 4,
+            "jabatan": "Anggota",
+            "periode": "2025"
+        }
     }
 ]

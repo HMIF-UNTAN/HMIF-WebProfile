@@ -66,17 +66,6 @@
         "updated_at": "2025-05-28T06:20:05.000000Z"
     },
     {
-        "id": 17,
-        "judul": "D Day Informers 19",
-        "kategori_kegiatan": "Himpunan",
-        "konten": "Puncak acara Informers'19 diselenggarakan pada 14 November 2023 sebagai perayaan ulang tahun ke-19 Program Studi Informatika FT UNTAN. Acara ini menjadi momen berkumpulnya seluruh keluarga besar Informatika dalam suasana penuh semangat, kekeluargaan, dan apresiasi atas pencapaian selama satu tahun terakhir. Rangkaian kegiatan di hari H meliputi penampilan hiburan, pemberian penghargaan, serta refleksi perjalanan HMIF dan Informatika UNTAN. Dengan antusiasme tinggi dari panitia, dosen, alumni, dan mahasiswa, Informers'19 berhasil menjadi wadah mempererat solidaritas dan menumbuhkan semangat kolaboratif untuk terus berinovasi ke depannya.",
-        "slug": "d-day-informers-19",
-        "tanggal_kegiatan": "2023-11-14T00:00:00.000000Z",
-        "thumbnail": "thumbnails\/5ym5TBrkWxsFTLd21Sf0CuLQSTJpKMM9YTsrp8TG.jpg",
-        "created_at": "2025-05-28T06:29:02.000000Z",
-        "updated_at": "2025-05-28T07:05:51.000000Z"
-    },
-    {
         "id": 18,
         "judul": "Studi Banding HMTIxHMIF",
         "kategori_kegiatan": "Fakultas",
@@ -86,5 +75,16 @@
         "thumbnail": "artikel_images\/fuN5J2yyDX9kh7PJDneCmq8JOpP8IOov9Hl4N6rJ.jpg",
         "created_at": "2025-05-28T06:35:10.000000Z",
         "updated_at": "2025-05-28T06:35:10.000000Z"
+    },
+    {
+        "id": 19,
+        "judul": "Hari H Informers 19",
+        "kategori_kegiatan": "Himpunan",
+        "konten": "Testing",
+        "slug": "hari-h-informers-19",
+        "tanggal_kegiatan": "2023-11-14T00:00:00.000000Z",
+        "thumbnail": "artikel_images\/eh6lCLsS0QRYoD1BgvpaU4M42BHxdIGoLcqtCWdA.jpg",
+        "created_at": "2025-05-28T08:25:55.000000Z",
+        "updated_at": "2025-05-28T08:25:55.000000Z"
     }
 ]

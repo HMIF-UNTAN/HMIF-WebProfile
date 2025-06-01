@@ -49,6 +49,6 @@
 
     <hr class="border-white my-6">
 
-    <p class="text-center text-sm relative z-10">&copy; HMIF {{ date('Y') }}. All rights reserved.</p>
+    <p class="text-center text-sm relative z-10">&copy; 2025 HMIF &nbsp;|&nbsp; Dibuat oleh Raden Adang Edithya Astama — v1.0</p>
   </div>
 </footer>
