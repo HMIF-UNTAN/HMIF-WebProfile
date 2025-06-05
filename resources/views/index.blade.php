@@ -157,45 +157,47 @@
     </div>
   
     <!-- WRAPPER CARD TEKS -->
-    <div id="statistik-container" class="flex justify-center gap-[8%] items-center flex-wrap">
+    <div id="statistik-container" class="flex flex-col md:flex-row justify-center items-center gap-y-6 md:gap-x-[8%] flex-wrap">
       {{-- Kartu Jumlah Divisi --}}
-      <div class="flex flex-col items-center border border-transparent bg-transparent p-4 rounded-lg shadow w-36 text-[#0F4696] font-bold shadow-none"
+      <div class="flex flex-col items-center border border-transparent bg-transparent p-4 rounded-lg w-full sm:w-36 text-[#0F4696] font-bold shadow-none"
           data-animate="fade-in-left">
           <svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" stroke-width="2"
-               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round"
                     d="M17 20h5v-2a4 4 0 00-3-3.87M9 20h6M4 20h5v-2a4 4 0 00-3-3.87M12 4a4 4 0 100 8 4 4 0 000-8z" />
           </svg>
           <div class="text-lg font-semibold">{{ count($daftarDivisi)-1 }}</div>
           <div class="text-sm">Divisi</div>
       </div>
-  
+
       {{-- Area Konten Divisi --}}
-      <div class="relative max-w-lg w-full rounded-lg shadow h-[250px] text-white overflow-hidden p-6 flex items-center justify-center text-center"
-           style="background: linear-gradient(rgba(15, 70, 150, 0.6), rgba(15, 70, 150, 0.6)), url('{{ asset('storage/Background-Footer.jpg') }}'); background-size: cover; background-position: center;"
-           data-animate="fade-in-bottom">
+      <div class="relative w-full md:w-[40%] min-h-[350px] sm:min-h-[350px] md:min-h-[400px] rounded-lg text-white overflow-hidden p-6 flex items-center justify-center text-center"
+          style="background: linear-gradient(rgba(15, 70, 150, 0.6), rgba(15, 70, 150, 0.6)), url('{{ asset('storage/Background-Footer.jpg') }}'); background-size: cover; background-position: center;"
+          data-animate="fade-in-bottom">
           @foreach ($daftarDivisi as $divisi)
               <div id="divisi-{{ $divisi->id }}"
-                   class="divisi-section absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center transition-opacity duration-300 opacity-0 hidden">
-                  <h3 class="text-xl font-bold mb-2 blur-in-out-text text-white" data-text="{{ $divisi->judul }}">
+                  class="divisi-section absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center transition-opacity duration-300 opacity-0 hidden">
+                  <h3 class="text-xl font-bold mb-2 blur-in-out-text text-white md:px-[10px]" data-text="{{ $divisi->judul }}">
                   </h3>
                   <p class="px-4 blur-in-out-text" data-text="{{ $divisi->konten[0] ?? 'Deskripsi Divisi Belum Ditambahkan' }}">
                   </p>
               </div>
           @endforeach
       </div>
-  
-      <div class="flex flex-col items-center border border-transparent bg-transparent p-4 rounded-lg shadow w-36 text-[#0F4696] font-bold shadow-none"
+
+      {{-- Kartu Jumlah Pengurus --}}
+      <div class="flex flex-col items-center border border-transparent bg-transparent p-4 rounded-lg w-full sm:w-36 text-[#0F4696] font-bold shadow-none"
           data-animate="fade-in-right">
           <svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" stroke-width="2"
-               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round"
                     d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
           <div class="text-lg font-semibold">{{ count($pengurus) }}</div>
           <div class="text-sm">Pengurus</div>
       </div>
-    </div>   
+  </div>
+ 
   </div>  
 </section>
 <section class="pt-12  bg-white">
