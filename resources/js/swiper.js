@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       centeredSlides: true,
       slidesPerView: 2,
       spaceBetween: -100,
+      speed: 2000,
       grabCursor: true,
       effect: 'coverflow',
       coverflowEffect: {

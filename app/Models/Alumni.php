@@ -32,4 +32,10 @@ class Alumni extends Model
         'foto',
         'status_verifikasi',
     ];
+
+    public function pendidikan()
+    {
+        return $this->hasMany(PendidikanAlumni::class);
+    }
+
 }

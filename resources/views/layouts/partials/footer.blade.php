@@ -18,10 +18,6 @@
           <i class="bi bi-envelope-fill mr-2 mt-1"></i>
           <a href="mailto:hmif@informatika.untan.ac.id" class="hover:underline">{{ $kontak->email }}</a>
         </p>
-        <p class="flex items-start md:items-center">
-          <i class="bi bi-telephone-fill mr-2 mt-1"></i>
-          {{ $kontak->narahubung_kontak }} ({{ $kontak->narahubung_nama }})
-        </p>
 
         <div class="flex mt-4 space-x-4 text-xl">
           <a href="https://www.linkedin.com/company/hmif-ft-untan/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">
@@ -49,6 +45,6 @@
 
     <hr class="border-white my-6">
 
-    <p class="text-center text-sm relative z-10">&copy; 2025 HMIF &nbsp;|&nbsp; Dibuat oleh Raden Adang Edithya Astama — v1.0</p>
+    <p class="text-center text-sm relative z-10">&copy; 2025 HMIF &nbsp;|&nbsp; Dibuat oleh Raden Adang Edithya Astama</p>
   </div>
 </footer>

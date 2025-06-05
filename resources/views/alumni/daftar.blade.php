@@ -82,9 +82,9 @@
         <div>
             <label class="{{ $label }}">Jenis Kelamin</label>
             <select name="jenis_kelamin" class="{{ $input }}" required>
-                <option value="" disabled selected>Pilih jenis kelamin</option>
-                <option value="L">Laki-laki</option>
-                <option value="P">Perempuan</option>
+                <option value="" disabled {{ old('jenis_kelamin') ? '' : 'selected' }}>Pilih jenis kelamin</option>
+                <option value="L" {{ old('jenis_kelamin') == 'L' ? 'selected' : '' }}>Laki-laki</option>
+                <option value="P" {{ old('jenis_kelamin') == 'P' ? 'selected' : '' }}>Perempuan</option>
             </select>
         </div>
 
@@ -105,20 +105,76 @@
 
         <h3 class="text-lg font-bold text-[#0C0221] mt-10">B. Data Akademik</h3>
 
-        <div>
+        <div class="mb-4">
             <label class="{{ $label }}">NIM</label>
             <input type="text" name="nim" class="{{ $input }}" value="{{ old('nim') }}" required>
         </div>
 
-        <div>
+        <div class="mb-4">
             <label class="{{ $label }}">Angkatan</label>
             <input type="number" name="angkatan" class="{{ $input }}" value="{{ old('angkatan') }}" required>
         </div>
 
-        <div>
+        <div class="mb-4">
             <label class="{{ $label }}">Judul Tugas Akhir</label>
             <input type="text" name="judul_tugas_akhir" class="{{ $input }}" value="{{ old('judul_tugas_akhir') }}">
         </div>
+
+        <div class="mb-4">
+            <label class="{{ $label }}">Pendidikan Terakhir</label>
+            <select name="pendidikan_terakhir" id="pendidikan_terakhir" class="{{ $input }}" required>
+                <option value="S1" {{ old('pendidikan_terakhir', 'S1') == 'S1' ? 'selected' : '' }}>S1</option>
+                <option value="S2" {{ old('pendidikan_terakhir') == 'S2' ? 'selected' : '' }}>S2</option>
+                <option value="S3" {{ old('pendidikan_terakhir') == 'S3' ? 'selected' : '' }}>S3</option>
+            </select>
+        </div>
+
+        {{-- Data S2 --}}
+       <div id="dataS2" class="hidden mt-6">
+        <h4 class="font-semibold text-[#0C0221] mb-2">Data S2</h4>
+
+        <input type="hidden" name="pendidikan[0][jenjang]" value="S2">
+
+        <div class="mb-4">
+            <label class="{{ $label }}">Institusi Pendidikan S2</label>
+            <input type="text" name="pendidikan[0][universitas]" class="{{ $input }}" value="{{ old('pendidikan.0.universitas') }}">
+        </div>
+        <div class="mb-4">
+            <label class="{{ $label }}">Judul Tesis S2</label>
+            <input type="text" name="pendidikan[0][judul_karya_akhir]" class="{{ $input }}" value="{{ old('pendidikan.0.judul_karya_akhir') }}">
+        </div>
+        <div class="mb-4">
+            <label class="{{ $label }}">Tahun Masuk S2</label>
+            <input type="number" name="pendidikan[0][tahun_masuk]" class="{{ $input }}" value="{{ old('pendidikan.0.tahun_masuk') }}">
+        </div>
+        <div class="mb-4">
+            <label class="{{ $label }}">Tahun Keluar S2</label>
+            <input type="number" name="pendidikan[0][tahun_lulus]" class="{{ $input }}" value="{{ old('pendidikan.0.tahun_lulus') }}">
+        </div>
+    </div>
+
+    <div id="dataS3" class="hidden mt-6">
+        <h4 class="font-semibold text-[#0C0221] mb-2">Data S3</h4>
+
+        <input type="hidden" name="pendidikan[1][jenjang]" value="S3">
+
+        <div class="mb-4">
+            <label class="{{ $label }}">Institusi Pendidikan S3</label>
+            <input type="text" name="pendidikan[1][universitas]" class="{{ $input }}" value="{{ old('pendidikan.1.universitas') }}">
+        </div>
+        <div class="mb-4">
+            <label class="{{ $label }}">Judul Disertasi S3</label>
+            <input type="text" name="pendidikan[1][judul_karya_akhir]" class="{{ $input }}" value="{{ old('pendidikan.1.judul_karya_akhir') }}">
+        </div>
+        <div class="mb-4">
+            <label class="{{ $label }}">Tahun Masuk S3</label>
+            <input type="number" name="pendidikan[1][tahun_masuk]" class="{{ $input }}" value="{{ old('pendidikan.1.tahun_masuk') }}">
+        </div>
+        <div class="mb-4">
+            <label class="{{ $label }}">Tahun Keluar S3</label>
+            <input type="number" name="pendidikan[1][tahun_lulus]" class="{{ $input }}" value="{{ old('pendidikan.1.tahun_lulus') }}">
+        </div>
+    </div>
 
         <h3 class="text-lg font-bold text-[#0C0221] mt-10">C. Pekerjaan</h3>
 
@@ -166,7 +222,7 @@
 
         <div>
             <label class="{{ $label }}">Upload Foto</label>
-            <input type="file" name="foto" class="{{ $input }}">
+            <input type="file" name="foto" class="{{ $input }}" accept="image/*">
         </div>
 
         <div>
@@ -199,5 +255,21 @@
         const popup = document.getElementById('successPopup');
         if (popup) popup.remove();
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const pendidikanSelect = document.getElementById('pendidikan_terakhir');
+        const dataS2 = document.getElementById('dataS2');
+        const dataS3 = document.getElementById('dataS3');
+
+        function togglePendidikanFields() {
+            const selected = pendidikanSelect.value;
+
+            dataS2.classList.toggle('hidden', selected !== 'S2' && selected !== 'S3');
+            dataS3.classList.toggle('hidden', selected !== 'S3');
+        }
+
+        pendidikanSelect.addEventListener('change', togglePendidikanFields);
+        togglePendidikanFields(); // call on load to apply old value
+    });
 </script>
 @endsection
