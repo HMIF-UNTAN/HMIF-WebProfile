@@ -1,7 +1,11 @@
 # HMIF-WebProfile
 Web Profil Himpunan Mahasiswa Informatika dengan fitur yang terbagi untuk guest dan admin
 - Guest
-
+    1. Halaman Dashboard
+    2. Halaman Artikel
+    3. Halaman Pengurus
+    4. Halaman Galeri
+    5. Halaman Ikatan alumni & Daftar sebagai alumbi
 - Admin
     1. Fitur Dapur untuk pengelolaan Admin
     2. Fitur menambahkan Artikel dengan gambar
