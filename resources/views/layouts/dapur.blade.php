@@ -11,7 +11,7 @@
 </head>
 <body class="flex min-h-screen">
 
-    <div class="w-64 h-screen bg-[#0F4696] text-white p-5 flex flex-col space-y-3">
+    <div class="w-64 h-full-screen bg-[#0F4696] text-white p-5 flex flex-col space-y-3">
         <h3 class="text-2xl font-bold mb-6 text-white">Dapur HMIF</h3>
         <a href="{{ route('viewdapur') }}" class="block px-4 py-2 rounded hover:bg-white/20">Dashboard</a>
         <a href="{{ route('dapurartikel') }}" class="block px-4 py-2 rounded hover:bg-white/20">Artikel</a>

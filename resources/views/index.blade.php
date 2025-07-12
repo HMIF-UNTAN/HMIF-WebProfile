@@ -218,7 +218,7 @@
               <div class="p-4 flex flex-col flex-grow">
                 <h3 class="text-lg font-semibold text-[#0F4696] leading-tight line-clamp-2">{{ $article->judul }}</h3>
                 <div class="mt-auto pt-4">
-                  <a href="{{ route('artikel.show', $article->slug) }}" class="text-sm text-[#0F4696] font-semibold hover:underline">
+                  <a href="{{ route('artikel.show', ['slug_id' => \Illuminate\Support\Str::slug($article->judul) . '-' . $article->id]) }}" class="text-sm text-[#0F4696] font-semibold hover:underline">
                     Baca Selengkapnya →
                   </a>
                 </div>
