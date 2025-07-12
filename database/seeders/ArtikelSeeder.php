@@ -18,6 +18,7 @@ class ArtikelSeeder extends Seeder
         $formattedData = array_map(function ($item) {
             return [
                 'judul' => $item['judul'],
+                'kategori_kegiatan' => $item['kategori_kegiatan'],
                 'konten' => $item['konten'],
                 'slug' => $item['slug'],
                 'tanggal_kegiatan' => Carbon::parse($item['tanggal_kegiatan'])->format('Y-m-d'),
