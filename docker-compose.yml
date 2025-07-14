@@ -6,35 +6,46 @@ services:
       context: .
       dockerfile: Dockerfile
       target: laravel_php_fpm
-    container_name: laravel_php
     working_dir: /var/www/html
-    volumes:
-      - .:/var/www/html
-      - ./storage:/var/www/html/storage
-      - ./storage/app/google/service-account.json:/var/www/html/storage/app/google/service-account.json:ro
-    env_file:
-      - .env
+    # Hapus baris volume yang me-mount kode aplikasi:
+    # - .:/var/www/html
+    # - ./storage:/var/www/html/storage
+    # Hapus baris volume untuk service-account.json
+    # - ./storage/app/google/service-account.json:/var/www/html/storage/app/google/service-account.json:ro
+    # Hapus env_file:
+    # env_file:
+    #   - .env
     depends_on:
       - db
     networks:
       - laravel
     environment:
       DB_HOST: db
+      # Variabel ini akan diisi dari Environment Variables di EasyPanel
       GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON: ${GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON}
       GOOGLE_DRIVE_CREDENTIALS_PATH: ${GOOGLE_DRIVE_CREDENTIALS_PATH}
+      # Tambahkan juga variabel Laravel lainnya yang dibutuhkan,
+      # seperti APP_KEY, APP_ENV, DB_DATABASE, DB_USERNAME, DB_PASSWORD, dsb.
+      # atau pastikan variabel tersebut di set di EasyPanel
+      # Contoh:
+      # APP_KEY: ${APP_KEY}
+      # DB_DATABASE: ${DB_DATABASE}
+      # DB_USERNAME: ${DB_USERNAME}
+      # DB_PASSWORD: ${DB_PASSWORD}
+
 
   web:
     build:
       context: .
       dockerfile: Dockerfile
       target: laravel_nginx
-    container_name: laravel_nginx
     ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./public:/var/www/html/public:ro
-      - ./storage:/var/www/html/storage:ro
+      - "80:80" # Biarkan ini untuk Nginx, EasyPanel akan map ini.
+      # - "443:443" # Jika Nginx juga handle SSL, biarkan. Jika EasyPanel handle SSL, mungkin tidak perlu di expose langsung.
+    # Hapus baris volume yang me-mount public dan storage:
+    # volumes:
+    #   - ./public:/var/www/html/public:ro
+    #   - ./storage:/var/www/html/storage:ro
     depends_on:
       - app
     networks:
@@ -42,11 +53,12 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: laravel_db
     restart: unless-stopped
-    ports:
-      - "3306:3306"
+    # Hapus port mapping untuk database agar tidak terekspos ke publik:
+    # ports:
+    #   - "3306:3306"
     environment:
+      # Variabel ini akan diisi dari Environment Variables di EasyPanel
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_PASSWORD: ${DB_PASSWORD}
