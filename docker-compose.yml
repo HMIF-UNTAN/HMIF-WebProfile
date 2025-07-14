@@ -10,11 +10,13 @@ services:
     working_dir: /var/www/html
     depends_on:
       - db
+    networks:
+      - laravel
     environment:
       DB_HOST: db
       GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON: ${GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON}
       GOOGLE_DRIVE_CREDENTIALS_PATH: ${GOOGLE_DRIVE_CREDENTIALS_PATH}
-      # Tambahkan variabel lain seperti:
+      # Laravel env lainnya
       # APP_KEY: ${APP_KEY}
       # APP_ENV: ${APP_ENV}
       # DB_DATABASE: ${DB_DATABASE}
@@ -22,6 +24,7 @@ services:
       # DB_PASSWORD: ${DB_PASSWORD}
 
   web:
+    container_name: nginx
     build:
       context: .
       dockerfile: Dockerfile
@@ -30,8 +33,11 @@ services:
       - "80:80"
     depends_on:
       - app
+    networks:
+      - laravel
 
   db:
+    container_name: mysql
     image: mysql:8.0
     restart: unless-stopped
     environment:
@@ -40,6 +46,12 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - laravel
 
 volumes:
   db_data:
+
+networks:
+  laravel:
+    driver: bridge
