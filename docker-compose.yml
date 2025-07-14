@@ -6,34 +6,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: laravel_php_fpm
     working_dir: /var/www/html
-    depends_on:
-      - db
-    environment:
-      DB_HOST: db
-    networks:
-      - laravel
-
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: laravel_nginx
     ports:
       - "80:80"
     depends_on:
-      - app
+      - db
     networks:
       - laravel
 
   db:
     image: mysql:8.0
     restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
     networks:
