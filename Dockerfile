@@ -3,11 +3,11 @@ FROM node:20-alpine AS node_builder
 
 WORKDIR /app
 
-# Salin dan install dependensi Node
+# Install Node dependencies
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Salin seluruh source code untuk proses build frontend
+# Copy source code and build frontend
 COPY . .
 RUN npm run build
 
@@ -21,17 +21,29 @@ RUN composer install --no-dev --prefer-dist --no-interaction --no-scripts
 RUN composer dump-autoload --optimize --classmap-authoritative --no-scripts
 
 
-# --- STAGE 3: PHP-FPM (Laravel App Server) ---
-FROM php:8.3-fpm-bullseye AS laravel_php_fpm
+# --- FINAL STAGE: PHP-FPM + Nginx in one container ---
+FROM php:8.3-fpm-bullseye
 
-# Install dependencies sistem
+# Install dependencies
 RUN apt-get update && apt-get install -y \
-    git unzip libpng-dev libjpeg-dev libwebp-dev libfreetype6-dev \
-    libxml2-dev libonig-dev libicu-dev zlib1g-dev libzip-dev libssl-dev \
+    nginx \
+    git \
+    unzip \
+    libpng-dev \
+    libjpeg-dev \
+    libwebp-dev \
+    libfreetype6-dev \
+    libxml2-dev \
+    libonig-dev \
+    libicu-dev \
+    zlib1g-dev \
+    libzip-dev \
+    libssl-dev \
     default-mysql-client \
+    supervisor \
     && rm -rf /var/lib/apt/lists/*
 
-# Install ekstensi PHP
+# Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) pdo pdo_mysql mbstring xml zip gd \
     opcache intl bcmath fileinfo \
@@ -39,35 +51,23 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
 
 WORKDIR /var/www/html
 
-# Salin source code Laravel
+# Copy source code
 COPY . .
-
-# Salin vendor dan hasil build frontend
 COPY --from=composer_installer /app/vendor ./vendor
 COPY --from=node_builder /app/public/build ./public/build
 
-# Set permission
+# Permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
 
-# Salin entrypoint jika ada
+# Copy config files
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Entrypoint
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
-EXPOSE 9000
-CMD ["php-fpm"]
-
-
-# --- STAGE 4: Nginx Web Server ---
-FROM nginx:bullseye AS laravel_nginx
-
-# Hapus default config dan salin konfigurasi custom
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Salin folder public dari Laravel (readonly)
-COPY --from=laravel_php_fpm /var/www/html/public /var/www/html/public
-
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/bin/supervisord"]
