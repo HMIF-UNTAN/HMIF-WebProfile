@@ -96,6 +96,7 @@ FROM nginx:bullseye AS laravel_nginx
 
 # Hapus default config Nginx dan pasang config kustom
 RUN rm /etc/nginx/conf.d/default.conf
+RUN ls -lah
 COPY nginx.conf /etc/nginx/conf.d/default.conf # Pastikan file ini ada di root proyek Anda
 
 # Salin folder public dari Laravel stage
