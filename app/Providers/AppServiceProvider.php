@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+         if (env('APP_ENV') === 'production' && env('APP_URL')) { // Pastikan hanya di produksi dan APP_URL ada
+            URL::forceScheme('https');
+        }
+        
         Paginator::useTailwind();
 
         View::composer('*', function ($view) {
