@@ -11,9 +11,9 @@ services:
       - "80:80"
     environment:
       DB_HOST: db
-      DB_DATABASE: ${DB_DATABASE}
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: webprofile_hmif
+      DB_USERNAME: root
+      DB_PASSWORD: root
     depends_on:
       - db
     volumes:
@@ -25,10 +25,10 @@ services:
     image: mysql:8.0
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: webprofile_hmif
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     volumes:
       - db_data:/var/lib/mysql
     networks:
