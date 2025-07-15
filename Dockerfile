@@ -31,6 +31,9 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) pdo pdo_mysql mbstring xml zip gd \
     opcache intl bcmath fileinfo
 
+COPY --from=composer_installer /usr/bin/composer /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
+
 WORKDIR /var/www/html
 
 # Copy Laravel source
