@@ -1,0 +1,9 @@
+!alumni
+!alumni/foto
+!alumni/foto/*
+!artikel_images/
+!artikel_images/*
+!foto_pengurus/
+!foto_pengurus/*
+!thubnails/
+!.gitignore
