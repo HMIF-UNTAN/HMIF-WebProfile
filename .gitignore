@@ -21,3 +21,21 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Kecuali folder storage/app/public itu sendiri
+!/storage/app/public/
+
+# Dan kecuali semua isi di dalam storage/app/public (file dan subfolder)
+!/storage/app/public/**
+
+# Jika Anda memiliki subfolder tertentu di dalam storage/app/public yang ingin diabaikan lagi,
+# Anda bisa menambahkannya di sini. Contoh:
+# /storage/app/public/uploads/ # Abaikan folder 'uploads' di dalam public
+
+# Abaikan file log Laravel
+/storage/logs/*.log
+
+# Abaikan cache framework
+/storage/framework/cache/*
+/storage/framework/views/*
+/storage/framework/sessions/*
