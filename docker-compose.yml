@@ -10,7 +10,7 @@ services:
     ports:
       - "80:80"
     environment:
-      DB_HOST: db
+      DB_HOST: ${DB_HOST}
       DB_DATABASE: ${DB_DATABASE}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
