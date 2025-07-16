@@ -2,4 +2,5 @@
 !private/
 !public/
 !public/*
+!google/
 !.gitignore
