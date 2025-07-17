@@ -17,13 +17,13 @@ Website profil resmi **HMIF FT UNTAN** yang mencakup fitur galeri kegiatan (teri
 
 ## ⚙️ Teknologi yang Digunakan
 
-| Komponen     | Teknologi                                 |
-|--------------|--------------------------------------------|
-| Backend      | Laravel 8.3, PHP                           |
-| Frontend     | Blade, Tailwind CSS, SwiperCSS, Swiper.js |
-| API          | Google Drive API                          |
-| Database     | MySQL                                     |
-| Deployment   | Docker                                     |
+| Komponen     | Teknologi                                          |
+|--------------|-----------------------------------------------------|
+| Backend      | Laravel 8.3, PHP                                    |
+| Frontend     | Blade, Tailwind CSS, SwiperCSS, Swiper.js, **Vite** |
+| API          | Google Drive API                                   |
+| Database     | MySQL                                              |
+| Deployment   | Docker                                              |
 
 ---
 
@@ -42,7 +42,12 @@ cd [FOLDER_PROJECT]
 composer install
 ```
 
-### 3. Salin File .env dan Atur Konfigurasi Database
+### 3. Install Dependency Frontend (Vite)
+```bash
+npm install
+```
+
+### 4. Salin File .env dan Atur Konfigurasi Database
 ```bash
 cp .env.example .env
 ```
@@ -57,20 +62,26 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 4. Generate App Key Laravel
+### 5. Generate App Key Laravel
 ```bash
 php artisan key:generate
 ```
 
-### 5. Migrasi dan Seeder Database
+### 6. Migrasi dan Seeder Database
 ```bash
 php artisan migrate --seed
 composer dump-autoload
 ```
 
-### 6. Jalankan Server
+### 7. Jalankan Server Backend dan Frontend
+#### Jalankan Laravel Backend:
 ```bash
 php artisan serve
+```
+
+#### Jalankan Vite Dev Server:
+```bash
+npm run dev
 ```
 
 Akses website di: [http://localhost:8000](http://localhost:8000)
