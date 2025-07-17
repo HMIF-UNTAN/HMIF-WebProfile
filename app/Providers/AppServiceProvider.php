@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
                 }
 
                 // Simpan file
+                $decoded['private_key'] = str_replace('\\n', "\n", $decoded['private_key']);
                 file_put_contents($path, json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
             } catch (\JsonException $e) {
                 logger()->error('Invalid GOOGLE_CREDENTIAL_JSON: ' . $e->getMessage());
