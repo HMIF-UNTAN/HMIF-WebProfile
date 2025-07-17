@@ -14,7 +14,7 @@ services:
       DB_DATABASE: webprofile_hmif
       DB_USERNAME: root
       DB_PASSWORD: root
-      GOOGLE_CREDEnTIAL_JSON: ${GOOGLE_CREDENTIAL_JSON} 
+      GOOGLE_CREDENTIAL_JSON: ${GOOGLE_CREDENTIAL_JSON} 
       GOOGLE_APPLICATION_CREDENTIALS: /var/www/html/storage/app/google/service-account.json
     depends_on:
       - db
