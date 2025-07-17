@@ -19,7 +19,7 @@ Website profil resmi **HMIF FT UNTAN** yang mencakup fitur galeri kegiatan (teri
 
 | Komponen     | Teknologi                                          |
 |--------------|-----------------------------------------------------|
-| Backend      | Laravel 8.3, PHP                                    |
+| Backend      | Laravel 11, PHP 8.3                                   |
 | Frontend     | Blade, Tailwind CSS, SwiperCSS, Swiper.js, **Vite** |
 | API          | Google Drive API                                   |
 | Database     | MySQL                                              |
