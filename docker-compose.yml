@@ -14,10 +14,12 @@ services:
       DB_DATABASE: webprofile_hmif
       DB_USERNAME: root
       DB_PASSWORD: root
+      GOOGLE_APPLICATION_CREDENTIALS: /var/www/html/storage/app/google/service-account.json
     depends_on:
       - db
     volumes:
       - .:/var/www/html
+      - ./storage/app/google/service-account.json:/var/www/html/storage/app/google/service-account.json
     networks:
       - laravel
 

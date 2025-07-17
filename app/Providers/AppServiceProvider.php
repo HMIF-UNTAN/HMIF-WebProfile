@@ -24,6 +24,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+         $json = env('GOOGLE_CREDENTIAL_JSON');
+
+        $path = storage_path('app/google/service-account.json');
+
+        if ($json && !file_exists($path)) {
+            @mkdir(dirname($path), 0775, true);
+            file_put_contents($path, $json);
+        }
+        
          if (env('APP_ENV') === 'production' && env('APP_URL')) { // Pastikan hanya di produksi dan APP_URL ada
             URL::forceScheme('https');
         }
