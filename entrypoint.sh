@@ -4,9 +4,9 @@
 GOOGLE_CREDENTIAL_PATH="/var/www/html/storage/app/google/service-account.json"
 
 if [ ! -f "$GOOGLE_CREDENTIAL_PATH" ]; then
-    mkdir -p /var/www/html/storage/app/google
-
     echo "[entrypoint] Membuat file service-account.json dari \$GOOGLE_CREDENTIAL_JSON..."
+
+    mkdir -p /var/www/html/storage/app/google
 
     php -r '
         $json = getenv("GOOGLE_CREDENTIAL_JSON");
@@ -21,7 +21,7 @@ if [ ! -f "$GOOGLE_CREDENTIAL_PATH" ]; then
             exit(2);
         }
 
-        // Perbaiki karakter escaped seperti \n dan \/
+        // Perbaiki newline yang terescape
         if (isset($decoded["private_key"])) {
             $decoded["private_key"] = str_replace(["\\\\n", "\\n"], "\n", $decoded["private_key"]);
         }
@@ -32,12 +32,17 @@ if [ ! -f "$GOOGLE_CREDENTIAL_PATH" ]; then
 fi
 
 # ===== Laravel setup =====
+echo "[entrypoint] Menjalankan Laravel setup..."
+
+# Buat symbolic link storage jika belum ada
 if [ ! -L /var/www/html/public/storage ]; then
     php artisan storage:link --force
 fi
 
+# Set permission
 chown -R www-data:www-data /var/www/html
 chmod -R 775 storage bootstrap/cache
 
 # ===== Start Supervisor =====
+echo "[entrypoint] Menjalankan Supervisor..."
 exec /usr/bin/supervisord -c /etc/supervisord.conf
