@@ -1,13 +1,82 @@
-# HMIF-WebProfile
-Web Profil Himpunan Mahasiswa Informatika dengan fitur yang terbagi untuk guest dan admin
-- Guest
-    1. Halaman Dashboard
-    2. Halaman Artikel
-    3. Halaman Pengurus
-    4. Halaman Galeri
-    5. Halaman Ikatan alumni & Daftar sebagai alumbi
-- Admin
-    1. Fitur Dapur untuk pengelolaan Admin
-    2. Fitur menambahkan Artikel dengan gambar
-    3. Fitur menambahkan Album kegiatan dengan GoogleDriveApi (terbatas hanya untuk foto, maksimal 20 foto per upload, dan maksimal total size file 100mb dari 20 foto dengan max 35mb/file)
-    4. Fitur menambahkan kepengurusan/keanggotaan
+
+# 🌐 Web Profile HMIF FT UNTAN
+
+Website profil resmi **HMIF FT UNTAN** yang mencakup fitur galeri kegiatan (terintegrasi dengan Google Drive API), artikel kegiatan, daftar pengurus HMIF, dan informasi alumni IKA.
+
+---
+
+## ✨ Fitur Utama
+
+- 🏠 **Beranda** — Tampilan halaman utama informasi HMIF
+- 🖼️ **Galeri Kegiatan** — Terintegrasi langsung dengan Google Drive API
+- 📝 **Artikel Kegiatan** — Dokumentasi artikel kegiatan dan berita terbaru
+- 🧑‍💼 **Kepengurusan** — Informasi struktur dan daftar pengurus HMIF
+- 🎓 **IKA Alumni** — Informasi alumni HMIF dari berbagai angkatan
+
+---
+
+## ⚙️ Teknologi yang Digunakan
+
+| Komponen     | Teknologi                                 |
+|--------------|--------------------------------------------|
+| Backend      | Laravel 8.3, PHP                           |
+| Frontend     | Blade, Tailwind CSS, SwiperCSS, Swiper.js |
+| API          | Google Drive API                          |
+| Database     | MySQL                                     |
+| Deployment   | Docker                                     |
+
+---
+
+## 🚀 Instalasi Lokal
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek ini secara lokal:
+
+### 1. Clone Repositori
+```bash
+git clone [REPO_URL]
+cd [FOLDER_PROJECT]
+```
+
+### 2. Install Dependency PHP
+```bash
+composer install
+```
+
+### 3. Salin File .env dan Atur Konfigurasi Database
+```bash
+cp .env.example .env
+```
+
+Edit file `.env` dan sesuaikan konfigurasi database Anda:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=hmif_profile
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 4. Generate App Key Laravel
+```bash
+php artisan key:generate
+```
+
+### 5. Migrasi dan Seeder Database
+```bash
+php artisan migrate --seed
+composer dump-autoload
+```
+
+### 6. Jalankan Server
+```bash
+php artisan serve
+```
+
+Akses website di: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🙌 Kontribusi
+
+Proyek ini merupakan bagian dari sistem informasi internal HMIF FT UNTAN dan terus dikembangkan untuk mendukung kebutuhan dokumentasi dan organisasi.
