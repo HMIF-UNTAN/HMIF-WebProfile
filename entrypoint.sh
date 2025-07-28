@@ -34,6 +34,12 @@ fi
 # ===== Laravel setup =====
 echo "[entrypoint] Menjalankan Laravel setup..."
 
+# ✅ Tambahkan pengecekan autoload.php
+if [ ! -f vendor/autoload.php ]; then
+    echo "[entrypoint] vendor/autoload.php tidak ditemukan, menjalankan composer dump-autoload..."
+    composer dump-autoload --optimize --classmap-authoritative --no-dev --no-interaction
+fi
+
 # Buat symbolic link storage jika belum ada
 if [ ! -L /var/www/html/public/storage ]; then
     php artisan storage:link --force
