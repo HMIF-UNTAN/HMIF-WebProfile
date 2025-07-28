@@ -37,9 +37,9 @@ RUN chmod +x /usr/local/bin/composer
 WORKDIR /var/www/html
 
 # Copy Laravel source
-COPY . .
 COPY --from=composer_installer /app/vendor ./vendor
 COPY --from=node_builder /app/public/build ./public/build
+COPY . .
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
