@@ -1,10 +1,11 @@
 .git
 .gitignore
 .env
-vendor/
 node_modules/
+vendor/
 npm-debug.log
 .vscode/
+
 storage/*.log
 storage/*.sqlite
 storage/framework/cache/*
