@@ -19,7 +19,6 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/var/www/html
       - ./storage/app/google/service-account.json:/var/www/html/storage/app/google/service-account.json
     networks:
       - laravel
