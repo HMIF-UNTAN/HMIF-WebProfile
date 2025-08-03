@@ -21,7 +21,6 @@ if [ ! -f "$GOOGLE_CREDENTIAL_PATH" ]; then
             exit(2);
         }
 
-        // Perbaiki newline yang terescape
         if (isset($decoded["private_key"])) {
             $decoded["private_key"] = str_replace(["\\\\n", "\\n"], "\n", $decoded["private_key"]);
         }
@@ -34,10 +33,10 @@ fi
 # ===== Laravel setup =====
 echo "[entrypoint] Menjalankan Laravel setup..."
 
-# ✅ Tambahkan pengecekan autoload.php
-if [ ! -f vendor/autoload.php ]; then
-    echo "[entrypoint] vendor/autoload.php tidak ditemukan, menjalankan composer dump-autoload..."
-    composer dump-autoload --optimize --classmap-authoritative --no-dev --no-interaction
+# ✅ Deteksi vendor/autoload.php rusak atau hilang
+if [ ! -f vendor/autoload.php ] || ! grep -q "Composer" vendor/autoload.php; then
+    echo "[entrypoint] vendor/autoload.php tidak ditemukan atau rusak. Menjalankan composer install..."
+    composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 fi
 
 # Buat symbolic link storage jika belum ada
