@@ -53,19 +53,32 @@ class GoogleDriveService
 
     public function createFolder($folderName)
     {
-        $parentId = env('GOOGLE_DRIVE_FOLDER_ID');
+        try {
+            $parentId = env('GOOGLE_DRIVE_FOLDER_ID');
 
-        $fileMetadata = new \Google_Service_Drive_DriveFile([
-            'name' => $folderName,
-            'mimeType' => 'application/vnd.google-apps.folder',
-            'parents' => [$parentId],
-        ]);
+            // Pastikan parent ID ada sebelum melanjutkan
+            if (!$parentId) {
+                error_log("Error: GOOGLE_DRIVE_FOLDER_ID is not set.");
+                return null;
+            }
 
-        $folder = $this->service->files->create($fileMetadata, [
-            'fields' => 'id',
-        ]);
+            $fileMetadata = new \Google_Service_Drive_DriveFile([
+                'name' => $folderName,
+                'mimeType' => 'application/vnd.google-apps.folder',
+                'parents' => [$parentId],
+            ]);
 
-        return $folder->id;
+            $folder = $this->service->files->create($fileMetadata, [
+                'fields' => 'id',
+            ]);
+
+            return $folder->id;
+
+        } catch (\Google\Service\Exception $e) {
+            // Tangkap kesalahan spesifik dari API Google
+            error_log("Google Drive API Error (Create Folder): " . $e->getMessage());
+            return null; // Mengembalikan null untuk menandakan kegagalan
+        }
     }
 
     public function deleteFolder($folderId)
