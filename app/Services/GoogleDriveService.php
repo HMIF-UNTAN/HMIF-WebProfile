@@ -17,7 +17,7 @@ class GoogleDriveService
         $this->client = new Google_Client();
         $absolutePath = config('services.google.drive_credentials_path');
         $this->client->setAuthConfig($absolutePath);
-        $this->client->addScope(Google_Service_Drive::DRIVE);
+        $this->client->setScope(Google_Service_Drive::DRIVE);
         $this->service = new Google_Service_Drive($this->client);
     }
 
